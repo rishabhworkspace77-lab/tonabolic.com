@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Tonabolic</title>
+    <meta name="description" content="Explore Tonabolic's comprehensive suite of tailored training modalities and holistic wellness programs.">
+    <link rel="icon" href="assets/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <style>
+        /* Custom CSS Variables (Adjusted for Dark Mode) */
+        :root {
+            --accent: #F9C349; /* Gold/Yellow */
+            --text-light: #e5e5e5; /* Main light text color */
+            --text-muted: #b3b3b3;
+            --dark-1: #0b0b0b; /* Deep Black for Body/Footer */
+            --dark-2: #151515; /* Slightly lighter dark for main container */
+            --card-bg: #1a1a1a; /* Background for cards/sections */
+        }
+        
+        /* Apply variables to Tailwind utility classes */
+        .text-accent { color: var(--accent); }
+        .hover\:text-accent:hover { color: var(--accent); }
+        .bg-dark-1 { background-color: var(--dark-1); }
+        .bg-dark-2 { background-color: var(--dark-2); }
+        .bg-card { background-color: var(--card-bg); }
+        .text-light { color: var(--text-light); }
+        .text-muted { color: var(--text-muted); }
+        
+        /* Custom styles */
+        .nav-animate {
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Hero text size adjustment for readability */
+        #hero-headline {
+            font-size: 3rem; 
+        }
+        @media (min-width: 768px) {
+            #hero-headline {
+                font-size: 4.5rem; 
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-dark-1 font-sans text-light">
+
+<header id="navBar"
+class="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] md:w-[80%] bg-[rgba(20,20,20,0.6)] backdrop-blur-sm shadow-lg border border-white/10 rounded-2xl nav-animate z-50">
+  <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
+
+<div class="flex items-center gap-2">
+  <img 
+    src="assets/logo/tonaboliclogo.png" 
+    alt="Tonabolic Logo" 
+    class="h-20 w-auto object-contain" 
+  />
+</div>
+
+    <nav class="hidden md:flex space-x-8 text-white">
+  <a href="/index.html" class="hover:text-accent">Home</a>
+  <a href="/aboutus.html" class="hover:text-accent">About</a>
+  <a href="/services.html" class="text-accent">Services</a>
+  <a href="#franchise" class="hover:text-accent">Franchise</a>
+  <a href="/contactus.html" class="hover:text-accent">Contact</a>
+  <a href="#blog" class="hover:text-accent">Blog</a>
+    </nav>
+
+    <button id="menuBtn" class="md:hidden text-white text-3xl focus:outline-none">
+      &#9776;
+    </button>
+  </div>
+</header>
+
+<div id="mobileNav" 
+  class="fixed inset-0 bg-[rgba(0,0,0,0.9)] text-white flex flex-col items-center justify-center space-y-10 text-3xl font-semibold transform translate-y-full transition-all duration-500 z-[60]">
+
+  <button id="closeNav" class="absolute top-6 right-6 text-4xl text-white">
+    &times;
+  </button>
+
+  <a href="/index.html" class="hover:text-accent">Home</a>
+  <a href="/aboutus.html" class="hover:text-accent">About</a>
+  <a href="/services.html" class="text-accent">Services</a>
+  <a href="#franchise" class="hover:text-accent">Franchise</a>
+  <a href="/contactus.html" class="hover:text-accent">Contact</a>
+  <a href="#blog" class="hover:text-accent">Blog</a>
+  
+</div>
+
+<section class="relative w-full min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20 overflow-hidden">
+    <img src="assets/services.jpeg" alt="Tonabolic Training Background"
+        class="absolute inset-0 w-full h-full object-cover z-0 opacity-20" >
+    <div class="absolute inset-0 bg-gradient-to-b from-dark-1 via-dark-1/60 to-dark-1 z-10"></div>
+
+    <div class="relative z-20 max-w-4xl mx-auto pt-24 md:pt-0" data-aos="fade-up">
+        <nav class="breadcrumb text-sm text-gray-400 mb-4">
+            <a href="index.html" class="hover:text-white">Home</a>
+            <span class="mx-2">/</span>
+            <span class="text-white font-semibold">Our Services</span>
+        </nav>
+
+        <h1 id="hero-headline" class="font-extrabold text-white mb-6">
+            <span class="text-accent">Activate</span> Your Peak Performance
+        </h1>
+        <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            Explore our comprehensive suite of tailored training modalities and holistic wellness programs, designed for every stage of your lifelong fitness journey.
+        </p>
+
+        <a href="#services-detail" class="inline-block px-8 py-3 bg-accent hover:bg-white text-dark-1 font-bold rounded-full transition shadow-lg uppercase tracking-wider">Explore Services</a>
+    </div>
+</section>
+
+<section class="py-24 px-6 max-w-6xl mx-auto space-y-24" id="services-detail">
+    
+    <header class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Our Core Offerings</h2>
+        <p class="text-lg text-gray-400 max-w-3xl mx-auto">
+            Personalized programs built on science, tailored to your unique needs, whether you are striving for elite fitness or holistic well-being.
+        </p>
+    </header>
+
+    <div class="grid md:grid-cols-2 gap-12 items-center" data-aos="fade-up">
+     <img src="assets/services/strength-condition.jpeg" 
+             alt="Strength & Conditioning" 
+             class="rounded-xl shadow-lg object-cover w-full h-[350px] md:h-[450px]">
+        <div>
+            <h2 class="text-4xl font-bold text-accent mb-4">Strength & Conditioning (S&C)</h2>
+            <p class="text-gray-300 leading-relaxed">
+                Comprehensive programs to build strength, endurance, and achieve peak performance. Expert coaches guide tailored workouts for every goal, utilizing state-of-the-art equipment and scientifically proven methodologies. This is the foundation of athletic excellence and functional strength.
+            </p>
+            <ul class="list-disc list-inside text-gray-400 mt-4 space-y-1">
+                <li>Focus on compound movements and progressive overload.</li>
+                <li>Sport-specific training and periodization.</li>
+                <li>Improve overall durability and physical resilience.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12 items-center md:flex-row-reverse" data-aos="fade-up" data-aos-delay="100">
+        <img src="assets/services/corrective.jpeg" 
+             alt="Corrective Exercise" 
+             class="rounded-xl shadow-lg object-cover w-full h-[350px] md:h-[450px]">
+        <div>
+            <h2 class="text-4xl font-bold text-accent mb-4">Corrective Exercise & FRC</h2>
+            <p class="text-gray-300 leading-relaxed">
+                We address muscular imbalances, poor posture, and improper movement patterns using specialized corrective techniques and Functional Range Conditioning (FRC). This ensures you move with greater ease, efficiency, and significantly reduced risk of injury, unlocking your body's true potential.
+            </p>
+            <ul class="list-disc list-inside text-gray-400 mt-4 space-y-1">
+                <li>Targeted mobility and stability drills.</li>
+                <li>Joint-specific control (Kinstretch principles).</li>
+                <li>Movement screen assessment for personalized plan.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12 items-center" data-aos="fade-up" data-aos-delay="200">
+        <img src="assets/services/agility.jpeg" 
+             alt="Speed & Agility" 
+             class="rounded-xl shadow-lg object-cover w-full h-[350px] md:h-[450px]">
+        <div>
+            <h2 class="text-4xl font-bold text-accent mb-4">Speed & Agility Training</h2>
+            <p class="text-gray-300 leading-relaxed">
+                Drills and specialized exercises designed to enhance quickness, reaction time, and multi-directional agility. Essential for athletes, this training provides a crucial competitive edge and improves dynamic movement control for better performance in any sport or physical activity.
+            </p>
+            <ul class="list-disc list-inside text-gray-400 mt-4 space-y-1">
+                <li>Ladder drills and cone work.</li>
+                <li>Plyometric and reaction-based training.</li>
+                <li>Maximal velocity development.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12 items-center md:flex-row-reverse" data-aos="fade-up" data-aos-delay="300">
+        <img src="assets/services/dynamic.jpeg" 
+             alt="Group Fitness & Movement" 
+             class="rounded-xl shadow-lg object-cover w-full h-[350px] md:h-[450px]">
+        <div>
+            <h2 class="text-4xl font-bold text-accent mb-4">Dynamic Group Fitness</h2>
+            <p class="text-gray-300 leading-relaxed">
+                Experience high-energy classes including Yoga for balance, Boxing for cardio and coordination, Zumba for fun, and Animal Flow for primal strength. Group training fosters community and accountability, pushing you further together.
+            </p>
+            <ul class="list-disc list-inside text-gray-400 mt-4 space-y-1">
+                <li>Yoga for flexibility and mental peace.</li>
+                <li>Boxing for intense full-body conditioning.</li>
+                <li>Animal Flow for integrated body movement.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12 items-center" data-aos="fade-up" data-aos-delay="400">
+        <img src="assets/services/rehab.jpeg" 
+             alt="Rehabilitation & Elderly Fitness" 
+             class="rounded-xl shadow-lg object-cover w-full h-[350px] md:h-[450px]">
+        <div>
+            <h2 class="text-4xl font-bold text-accent mb-4">Rehabilitation & Inclusive Fitness</h2>
+            <p class="text-gray-300 leading-relaxed">
+                Specialized, safe programs for post-injury/post-surgery recovery, ensuring you regain mobility and strength faster. We also offer comprehensive, inclusive training encompassing Strength, Mobility, and Balance, designed for all ages, from kids to the elderly.
+            </p>
+            <ul class="list-disc list-inside text-gray-400 mt-4 space-y-1">
+                <li>Post-rehab strength recovery.</li>
+                <li>Balance and stability training for seniors.</li>
+                <li>Foundational physical literacy for children.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12 items-center md:flex-row-reverse" data-aos="fade-up" data-aos-delay="500">
+        <img src="assets/services/wellness-diet.jpeg" 
+             alt="Nutrition & Corporate Wellness" 
+             class="rounded-xl shadow-lg object-cover w-full h-[350px] md:h-[450px]">
+        <div>
+            <h2 class="text-4xl font-bold text-accent mb-4">Holistic Wellness & Outreach</h2>
+            <p class="text-gray-300 leading-relaxed">
+                Our holistic services include Nutrition Consulting and targeted Corporate Wellness Drives. We help you optimize key health factors (sleep, digestion, stress) through diet and bring a culture of physical literacy and active living directly to your workplace.
+            </p>
+            <ul class="list-disc list-inside text-gray-400 mt-4 space-y-1">
+                <li>Personalized dietary coaching.</li>
+                <li>Corporate health talks and fitness workshops.</li>
+                <li>Focus on sustainable lifestyle changes.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="text-center pt-16" data-aos="fade-up">
+        <h3 class="text-3xl font-bold text-white mb-4">Ready to find your perfect plan?</h3>
+        <p class="text-lg text-gray-400 mb-8">Schedule a consultation with our expert trainers to tailor a program just for you.</p>
+        <a href="contact-us.html" class="inline-block px-10 py-4 bg-accent hover:bg-white text-dark-1 font-bold rounded-full transition shadow-lg uppercase tracking-wider">
+            Book a Consultation
+        </a>
+    </div>
+
+</section>
+
+<footer class="py-12 px-6 border-t border-white/5 text-muted bg-dark-1">
+    <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+        
+        <div data-aos="fade-up">
+            <h4 class="text-lg font-semibold text-light mb-4">Quick Links</h4>
+            <ul class="space-y-2 text-sm">
+                <li><a href="/index.html" class="hover:text-accent transition">Home</a></li>
+                <li><a href="/aboutus.html" class="hover:text-accent transition">About</a></li>
+                <li><a href="/services.html" class="hover:text-accent transition">Services</a></li>
+                <li><a href="#franchise" class="hover:text-accent transition">Franchise</a></li>
+                <li><a href="/contactus.html" class="hover:text-accent transition">Contact</a></li>
+                <li><a href="#blog" class="hover:text-accent transition">Blog</a></li>
+            </ul>
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="100">
+            <h4 class="text-lg font-semibold text-light mb-4">Train With Us</h4>
+            <a href="/contactus.html" class="inline-block mt-1 px-4 py-2 text-sm rounded-lg border border-accent text-accent hover:bg-accent hover:text-dark-1 transition">
+                Connect to Train
+            </a>
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="200">
+            <h4 class="text-lg font-semibold text-light mb-4">Partnership</h4>
+            <a href="#franchise" class="inline-block mt-1 px-4 py-2 text-sm rounded-lg border border-white/20 hover:border-accent hover:text-accent transition">
+                Explore Franchise
+            </a>
+        </div>
+        
+        <div class="md:col-span-1" data-aos="fade-up" data-aos-delay="300">
+            <h4 class="text-lg font-semibold text-light mb-4">Legal</h4>
+            <ul class="space-y-2 text-sm">
+                <li><a href="#" class="hover:text-accent transition">Privacy Policy</a></li>
+                <li><a href="#" class="hover:text-accent transition">Terms of Use</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="mt-12 pt-6 border-t border-white/5 text-center text-sm">
+        © 2025 Tonabolic. All rights reserved.
+    </div>
+</footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 900, once: true });</script>
+
+   <script>
+        const nav = document.getElementById("navBar");
+        const mobileNav = document.getElementById("mobileNav");
+        const menuBtn = document.getElementById("menuBtn");
+        const closeNav = document.getElementById("closeNav");
+
+        const INITIAL_NAV_CLASSES = ["w-[90%]", "md:w-[80%]", "rounded-2xl", "top-4", "bg-[rgba(20,20,20,0.6)]"];
+        const SCROLLED_NAV_CLASSES = ["w-full", "rounded-none", "top-0", "bg-[rgba(11,11,11,0.95)]"];
+
+        function setNavClasses(isScrolled) {
+            if (isScrolled) {
+                nav.classList.remove(...INITIAL_NAV_CLASSES);
+                nav.classList.add(...SCROLLED_NAV_CLASSES);
+            } else {
+                nav.classList.remove(...SCROLLED_NAV_CLASSES);
+                nav.classList.add(...INITIAL_NAV_CLASSES);
+            }
+        }
+
+        function closeMobileNav() {
+            mobileNav.classList.add("translate-y-full");
+        }
+
+        // EVENT LISTENERS
+        menuBtn.addEventListener("click", () => {
+            mobileNav.classList.remove("translate-y-full");
+        });
+
+        closeNav.addEventListener("click", closeMobileNav);
+        
+        // Close nav when any link is clicked within the mobile nav
+        mobileNav.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", closeMobileNav);
+        });
+        
+        window.addEventListener("scroll", () => {
+            setNavClasses(window.scrollY > 30);
+        });
+
+        // Run when page loads
+        document.addEventListener("DOMContentLoaded", () => {
+            setNavClasses(window.scrollY > 30);
+        });
+    </script>
+
+
+</body>
+</html>

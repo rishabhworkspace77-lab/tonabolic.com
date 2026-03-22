@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tonabolic – Fitness Training Designed Around You</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root {
+      --accent: #F9C349;
+      --text-light: #e5e5e5;
+      --text-muted: #b3b3b3;
+      --dark-1: #0b0b0b;
+      --dark-2: #111111;
+      --dark-3: #151515;
+      --dark-4: #1a1a1a;
+      --dark-5: #222222;
+      /* NEW COLOR ADDED: Deep Teal to pair with the gold accent */
+      --dark-accent: #022d4e; 
+    }
+
+    body {
+      background: var(--dark-1);
+      color: var(--text-light);
+      /* FONT CHANGE: Using Poppins for a clean, modern look */
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    /* 💥 FIX: Consolidated and strict overflow-x hiding for smooth AOS animations */
+    html, body {
+      overflow-x: hidden !important; 
+    }
+   
+    
+    /* Target elements with AOS data attributes to prevent horizontal overflow during animation */
+    [data-aos] {
+      overflow-x: hidden !important; 
+    }
+
+    .brand-text {
+      color: var(--accent);
+    }
+
+    .nav-animate {
+      transition: all .35s ease;
+      backdrop-filter: blur(8px);
+    }
+    /* CSS to hide the scrollbar */
+  .hide-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  /* Webkit-based browsers (Chrome, Safari) */
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Add this CSS inside your existing <style> block */
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      /* This value needs to be the total width of all 5 list items + their spaces */
+      /* Since each item is w-64 (16rem) and space-x-4 (1rem), 5 items is approx -82rem */
+      transform: translateX(calc(-1 * (5 * 16rem + 4 * 1rem))); 
+      /* For simplicity, we can use a large percentage or pixel value if exact calculation is too complex */
+      /* We will use a calculated value for cleaner looping: */
+      transform: translateX(-168rem); /* A safe estimate larger than container for smooth loop setup */
+  }
+}
+
+  .location-marquee {
+    /* Apply the animation */
+    animation: marquee 40s linear infinite; /* Adjust 40s for speed */
+  }
+  </style>
+</head>
+
+<body>
+
+<header id="navBar"
+  class="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] md:w-[80%] bg-[rgba(20,20,20,0.6)] shadow-lg border border-white/10 rounded-2xl nav-animate z-50">
+  <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
+
+<div class="flex items-center mt-4 gap-2">
+  <img 
+    src="assets/logo/tonaboliclogo.png" 
+    alt="Tonabolic Logo" 
+    class="h-16  w-auto object-contain" 
+  />
+</div>
+
+    <nav class="hidden md:flex space-x-8 text-white">
+  <a href="/index.html" class="hover:text-[var(--accent)]">Home</a>
+  <a href="/aboutus.html" class="hover:text-[var(--accent)]">About</a>
+  <a href="/services.html" class="hover:text-[var(--accent)]">Services</a>
+  <a href="/franchise.html" class="hover:text-[var(--accent)]">Franchise</a>
+  <a href="/contact.html" class="hover:text-[var(--accent)]">Contact</a>
+  <a href="/blog" class="hover:text-[var(--accent)]">Blog</a>
+    <a href="/gallery.html" class="hover:text-[var(--accent)]">Gallery</a>
+  
+    </nav>
+
+    <button id="menuBtn" class="md:hidden text-white text-3xl focus:outline-none">
+      &#9776;
+    </button>
+  </div>
+</header>
+
+
+<div id="mobileNav" 
+  class="fixed inset-0 bg-[rgba(0,0,0,0.9)] text-white flex flex-col items-center justify-center space-y-10 text-3xl font-semibold transform translate-y-full transition-all duration-500 z-[60]">
+
+  <button id="closeNav" class="absolute top-6 right-6 text-4xl text-white">
+    &times;
+  </button>
+
+    <a href="/index.html" class="hover:text-[var(--accent)]">Home</a>
+    <a href="/aboutus.html" class="hover:text-[var(--accent)]">About</a>
+    <a href="/services.html" class="hover:text-[var(--accent)]">Services</a>
+        <a href="/gallery.html" class="hover:text-[var(--accent)]">Gallery</a>
+    <a href="/franchise.html" class="hover:text-[var(--accent)]">Franchise</a>
+    <a href="/contact.html" class="hover:text-[var(--accent)]">Contact</a>
+    <a href="/blog" class="hover:text-[var(--accent)]">Blog</a>
+    
+</div>
+
+
+<section class="relative min-h-screen flex items-center justify-center bg-[var(--dark-1)] px-6" >
+    
+    <!-- 1. Full-Screen Image Container (Background) -->
+    <div class="absolute inset-0">
+        <!-- The Image will now cover the entire section -->
+        <img 
+            src="assets/banner.jpg" 
+            alt="A dynamic image illustrating personalized fitness training and coaching." 
+            class="w-full h-full object-cover"
+            onerror="this.onerror=null; this.src='https://placehold.co/1920x1080/1F2937/D1D5DB?text=Image+Load+Failed';"
+        />
+        
+        <!-- Dark Gradient Overlay for Text Readability -->
+        <div class="absolute inset-0 bg-black/70"></div>
+    </div>
+
+    <!-- 2. Centered Content (Text and CTAs) -->
+    <div class="relative z-10 max-w-4xl text-center py-20">
+        
+        <!-- Text is now white for contrast -->
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 mt-12 text-white leading-tight">
+            Fitness Training Designed Around <span class="brand-text">YOU</span>
+        </h1>
+
+        <p class="text-xl text-white/90 mb-12 leading-relaxed font-light">
+            Work with a personalized team of certified coaches who create custom plans based on your goals, backed by research and focused on sustainable progress. Get science-backed guidance from a handpicked team of coaches, making healthy habits easier and more enjoyable.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="#programs"
+               class="w-full sm:w-auto px-10 py-4 text-xl font-bold rounded-xl bg-[var(--accent)] text-black shadow-lg hover:bg-yellow-500 transition transform hover:scale-105">
+              Start Your Transformation
+            </a>
+
+            <a href="/contact.html"
+               class="w-full sm:w-auto px-10 py-4 text-xl font-bold rounded-xl border border-white/40 text-white hover:border-[var(--accent)] transition transform hover:scale-105">
+              Speak to Tonabolic Fitness Consultants
+            </a>
+        </div>
+    </div>
+</section>
+
+<section id="about-tonabolic" class="py-24 px-6 bg-white">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-14 items-center">
+
+    <div data-aos="fade-right">
+      <p class="text-sm font-semibold tracking-widest text-[var(--accent)] mb-2">
+        OUR VISION
+      </p>
+
+      <h2 class="text-4xl md:text-5xl font-extrabold mb-6 text-black">
+        Welcome to <span class="text-[var(--accent)]">Tonabolic!</span>
+      </h2>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Tonabolic isn’t just a pool of gym coaches.
+      </p>
+      
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Born from the vision of <strong>Ashrita Datta</strong>, Tonabolic is a collective of passionate, certified, and knowledgeable fitness professionals dedicated to helping you achieve your unique fitness goals.
+      </p>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        By combining deep understanding of <strong>human anatomy</strong> with mindful attention to special conditions and scientifically backed training principles, our team designs personalized, result-oriented fitness programs that evolve with your progress.
+      </p>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Our sessions focus on <strong>specificity, progressive overload, and functional movement</strong>, creating an experience that challenges your body and sharpens your mind. We stand for innovation, collaboration, and—most importantly—keeping fitness fun and sustainable.
+      </p>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Headquartered in Hyderabad, Tonabolic offers personal and small-group training programs that have transformed countless lives. From one-on-one sessions to structured <strong>corporate wellness programs</strong>, we cater to diverse goals, schedules, and preferences.
+      </p>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        We make consistency convenient by bringing fitness to your chosen space—your gym, your home, through online sessions, or even amidst the calm of outdoor parks.
+      </p>
+      
+      <p class="text-black font-semibold leading-relaxed mb-4 p-3 bg-yellow-50 border-l-4 border-[var(--accent)] rounded-lg">
+        Your body is built to move—to stay flexible, mobile, strong, balanced, and coordinated. It takes more than one coach to unlock all of that potential. That’s why, at Tonabolic, <strong>each client is supported by a team of 2–3 coaches</strong>, each contributing their expertise to deliver comprehensive, science-led training excellence.
+      </p>
+
+      <p class="text-gray-700 leading-relaxed mb-6">
+        At Tonabolic, we don't just train bodies; we <strong>empower transformations</strong>. With a dedicated team supporting every step of your journey, we ensure you unlock your fullest potential—building strength, flexibility, and resilience for life. Together, let’s make fitness a fulfilling, enduring part of your lifestyle.
+      </p>
+
+      <a href="/services.html"
+         class="inline-block mt-4 px-8 py-3 rounded-xl bg-[var(--accent)] hover:bg-yellow-500 text-black font-semibold transition">
+        START YOUR TRANSFORMATION
+      </a>
+    </div>
+
+    <div data-aos="fade-left">
+      <div class="w-full h-auto rounded-3xl bg-gray-200 border-4 border-[var(--accent)] shadow-lg overflow-hidden">
+        <img 
+          src="assets/team.png" 
+          alt="Tonabolic Team Coaching" 
+          class="w-full h-full object-contain"
+        />
+      </div>
+    </div>
+
+  </div>
+</section>
+<section id="image-gallery" class="py-20 px-6 bg-[var(--dark-4)] text-white">
+  <div class="max-w-6xl mx-auto text-center">
+
+    <h2 class="text-4xl font-bold mb-4">
+      Our Community in Action
+    </h2>
+    <p class="text-[var(--text-muted)] max-w-3xl mx-auto mb-16 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+      A curated collection of moments showcasing our community and commitment to fitness excellence.
+    </p>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+      
+     <div class="overflow-hidden rounded-lg aspect-square" data-aos="zoom-in" data-aos-delay="100">
+    <img 
+        src="assets/gallery/DSC03371.JPG" 
+        alt="Gallery Image of Coach 1" 
+        class="w-full h-full bg-black object-contain transition duration-300 hover:scale-105 **object-right-center**" 
+        onerror="this.onerror=null; this.src='https://placehold.co/300x300/1e2124/ffffff?text=Coach+1';" 
+    >
+</div>
+      <div class="overflow-hidden rounded-lg aspect-square" data-aos="zoom-in" data-aos-delay="200">
+        <img src="assets/gallery/Freedom_ride.jpg" alt="Gallery Image of Coach 2" class="w-full h-full object-cover transition duration-300 hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/300x300/1e2124/ffffff?text=Coach+2';" >
+      </div>
+      <div class="overflow-hidden rounded-lg aspect-square" data-aos="zoom-in" data-aos-delay="300">
+        <img src="assets/gallery/28577203_1095442600597347_5598609402935963043_n.jpg" alt="Gallery Image of Coach 3" class="w-full h-full object-cover transition duration-300 hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/300x300/1e2124/ffffff?text=Coach+3';" >
+      </div>
+      <div class="overflow-hidden rounded-lg aspect-square" data-aos="zoom-in" data-aos-delay="400">
+        <img src="assets/gallery/26904753_1068941989914075_6441790509960088731_n.jpg" alt="Gallery Image of Coach 4" class="w-full h-full object-cover transition duration-300 hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/300x300/1e2124/ffffff?text=Coach+4';" >
+      </div>
+      
+      <div class="overflow-hidden rounded-lg aspect-square" data-aos="zoom-in" data-aos-delay="500">
+        <img src="assets/gallery/Ashrita_Dutta.jpg" alt="Gallery Image of client training in gym" class="w-full h-full object-cover transition duration-300 hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/300x300/1e2124/ffffff?text=Client+Training+5';" >
+      </div>
+      <div class="overflow-hidden rounded-lg aspect-square" data-aos="zoom-in" data-aos-delay="600">
+        <img src="assets/gallery/DSC03561.JPG" alt="Gallery Image of trainer working with client at home" class="w-full h-full object-cover transition duration-300 hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/300x300/1e2124/ffffff?text=Home+Training+6';" >
+      </div>
+
+    </div>
+    
+  </div>
+</section>  <section id="key-pillars" class="py-20 bg-[var(--dark-2)]">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-4xl font-bold mb-20 text-center">
+      The Tonabolic Difference
+    </h2>
+
+    <div class="flex flex-col md:flex-row items-center gap-10 mb-24">
+      <div class="md:w-1/2 order-1" data-aos="fade-right">
+        <h3 class="text-3xl font-bold mb-4 text-[var(--accent)]">Science-Backed Training & Program Design</h3>
+        <p class="text-xl text-[var(--text-muted)] mb-4">Every workout, cycle and progression is built using proven training science-not guesswork.</p>
+        <p class="text-[var(--text-muted)] leading-relaxed">
+          All workouts are created using established principles from exercise science, such as <strong>progressive overload</strong> and <strong>periodization</strong>, ensuring systematic improvements to strength and endurance.
+        </p>
+      </div>
+      <div class="md:w-1/2 order-2" data-aos="zoom-in">
+        <div class="rounded-xl overflow-hidden shadow-2xl border-2 border-[var(--accent)] aspect-video">
+          <img src="assets/teaching-proper-form-online-personal-training.jpg" 
+               alt="Tonabolic Coach correcting client form" class="w-full h-full object-cover" />
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row-reverse items-center gap-10 mb-24">
+      <div class="md:w-1/2 order-1" data-aos="fade-left">
+        <h3 class="text-3xl font-bold mb-4 text-[var(--accent)]">Certified & Passionate Coaches</h3>
+        <p class="text-xl text-[var(--text-muted)] mb-4">Your fitness journey is supported by specialized experts selected specifically for your goals.</p>
+        <p class="text-[var(--text-muted)] leading-relaxed">
+          Coaches are matched to your needs, leveraging formal training and <strong>biometric expertise</strong> to provide safe, effective guidance throughout your transformation.
+        </p>
+      </div>
+      <div class="md:w-1/2 order-2" data-aos="zoom-in">
+        <div class="rounded-xl overflow-hidden shadow-2xl border-2 border-[var(--accent)] aspect-video">
+          <img src="assets/The Benefits of Consulting a Physiotherapist in Baulkham Hills.jpeg" 
+               alt="Advanced training session" class="w-full h-full object-cover" />
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row items-center gap-10">
+      <div class="md:w-1/2 order-1" data-aos="fade-right">
+        <h3 class="text-3xl font-bold mb-4 text-[var(--accent)]">Holistic: Training + Nutrition + Lifestyle</h3>
+        <p class="text-xl text-[var(--text-muted)] mb-4">A complete system that builds strength, boosts energy, and builds habits that last.</p>
+        <p class="text-[var(--text-muted)] leading-relaxed">
+          Physical exercise is integrated with <strong>evidence-based nutrition</strong> and behavioral strategies, fostering healthy habits that endure long after your program ends.
+        </p>
+      </div>
+      <div class="md:w-1/2 order-2" data-aos="zoom-in">
+        <div class="rounded-xl overflow-hidden shadow-2xl border-2 border-[var(--accent)] aspect-video">
+          <img src="assets/GettyImages-1299421209.webp" 
+               alt="Holistic health representation" class="w-full h-full object-cover" />
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section id="programs" class="py-20 px-6 bg-[var(--dark-accent)]">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl font-bold mb-12" >
+      Choose Your Fitness Path
+    </h2>
+
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+      <div class="p-6 bg-[var(--dark-3)] border border-white/10 rounded-xl shadow hover:-translate-y-2 transition" data-aos="zoom-in">
+        <h3 class="text-xl font-semibold">Personal Training</h3>
+        <p class="text-[var(--text-muted)] text-sm mb-4">Customised sessions built entirely around your goals, limitations, energy levels, and daily progress.</p>
+        <a href="/services.html" 
+           class="text-[var(--accent)] font-semibold flex items-center gap-1 group">
+          Explore
+         <span class="text-white transform transition-all duration-300 group-hover:translate-x-3">
+            &gt;
+          </span>
+        </a>
+      </div>
+
+      <div class="p-6 bg-[var(--dark-3)] border border-white/10 rounded-xl shadow hover:-translate-y-2 transition" data-aos="zoom-in" data-aos-delay="100">
+        <h3 class="text-xl font-semibold">Group Training</h3>
+        <p class="text-[var(--text-muted)] text-sm mb-4">Small-group formats (max 1:3 ratio) with strategic coach attention, intelligent program flow, and high-energy sessions.</p>
+   <a href="/services.html" 
+           class="text-[var(--accent)] font-semibold flex items-center gap-1 group">
+          Explore
+         <span class="text-white transform transition-all duration-300 group-hover:translate-x-3">
+            &gt;
+          </span>
+        </a>
+      </div>
+
+      <div class="p-6 bg-[var(--dark-3)] border border-white/10 rounded-xl shadow hover:-translate-y-2 transition" data-aos="zoom-in" data-aos-delay="200">
+        <h3 class="text-xl font-semibold">Strength & Conditioning</h3>
+        <p class="text-[var(--text-muted)] text-sm mb-4">A systematic approach to building strength, mobility and endurance — all while staying injury-free.</p>
+        <a href="/services.html" 
+           class="text-[var(--accent)] font-semibold flex items-center gap-1 group">
+          Explore
+          <span class="text-white transform transition-all duration-300 group-hover:translate-x-3">
+            &gt;
+          </span>
+        </a>
+      </div>
+
+      <div class="p-6 bg-[var(--dark-3)] border border-white/10 rounded-xl shadow hover:-translate-y-2 transition" data-aos="zoom-in" data-aos-delay="300">
+        <h3 class="text-xl font-semibold">Athletic Training</h3>
+        <p class="text-[var(--text-muted)] text-sm mb-4">Skill focused sessions that build agility, speed, stamina, coordination and confidence - needed specifically to the athletic sport of participant.</p>
+    <a href="/services.html" 
+           class="text-[var(--accent)] font-semibold flex items-center gap-1 group">
+          Explore
+          <span class="text-white transform transition-all duration-300 group-hover:translate-x-3">
+            &gt;
+          </span>
+        </a>
+      </div>
+
+      <div class="p-6 bg-[var(--dark-3)] border border-white/10 rounded-xl shadow hover:-translate-y-2 transition" data-aos="zoom-in" data-aos-delay="400">
+        <h3 class="text-xl font-semibold">Kids & Teens Fitness</h3>
+        <p class="text-[var(--text-muted)] text-sm mb-4">Fun, safe and developmental training that builds strength, motor skills and lifelong healthy habits for 8 to 16 year olds.</p>
+       <a href="/services.html" 
+           class="text-[var(--accent)] font-semibold flex items-center gap-1 group">
+          Explore
+          <span class="text-white transform transition-all duration-300 group-hover:translate-x-3">
+            &gt;
+          </span>
+        </a>
+      </div>
+
+      <div class="p-6 bg-[var(--dark-3)] border border-white/10 rounded-xl shadow hover:-translate-y-2 transition" data-aos="zoom-in" data-aos-delay="500">
+        <h3 class="text-xl font-semibold">Nutrition Guidance</h3>
+        <p class="text-[var(--text-muted)] text-sm mb-4">Customized, balanced, habit-based recommendations to support your goals and complement your training plan (Optional and need-based).</p>
+    <a href="/services.html" 
+           class="text-[var(--accent)] font-semibold flex items-center gap-1 group">
+          Explore
+          <span class="text-white transform transition-all duration-300 group-hover:translate-x-3">
+            &gt;
+          </span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section id="why-stay" class="py-20 px-6 bg-[var(--dark-2)]"> 
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl font-bold mb-12" >
+ Why do our clients love us and stay training with us ?
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-10">
+
+      <div class="p-6 bg-[var(--dark-3)] border border-white/10 rounded-xl shadow" data-aos="fade-up">
+        <h3 class="text-xl font-semibold mb-3 text-[var(--accent)]">Intelligent Training Plans</h3>
+        <p class="text-[var(--text-muted)] text-sm mb-2">No two training days are ever the same.</p>
+        <p class="text-[var(--text-muted)] text-sm">Every session is intentionally planned to match your progress, energy, mobility and goals. Strategic plan design ensures you keep improving — without plateaus or monotony.</p>
+      </div>
+
+      <div class="p-6 bg-[var(--dark-3)] border border-white/10 rounded-xl shadow" data-aos="fade-up" data-aos-delay="150">
+        <h3 class="text-xl font-semibold mb-3 text-[var(--accent)]">A Team of Coaches Dedicated to Your Goals</h3>
+        <p class="text-[var(--text-muted)] text-sm mb-2">You’re supported by multiple specialized coaches.</p>
+        <p class="text-[var(--text-muted)] text-sm">Your coach team collaborates on your progress, ensuring you always receive the right guidance, technique correction and motivation — exactly when you need it.</p>
+      </div>
+
+      <div class="p-6 bg-[var(--dark-3)] border border-white/10 rounded-xl shadow" data-aos="fade-up" data-aos-delay="300">
+        <h3 class="text-xl font-semibold mb-3 text-[var(--accent)]">Safe, Sustainable & Injury-Free Progress</h3>
+        <p class="text-[var(--text-muted)] text-sm mb-2">Nobody wants to get injured.</p>
+        <p class="text-[var(--text-muted)] text-sm">Our programs are built to make you stronger safely, reduce injury risk, improve movement quality, and help you stay fit for life. Everything progresses gradually — the right way, not the fast way.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section id="locations" class="py-20 px-6 bg-[var(--dark-4)]">
+  <div class="max-w-6xl mx-auto text-center">
+
+    <h2 class="text-4xl font-bold mb-4">
+      Training at Hyderabad
+    </h2>
+    
+    <div class="relative w-full h-[400px] mb-8 rounded-2xl overflow-hidden " data-aos="fade-up">
+      <div class="absolute inset-0 flex items-center justify-center ">
+        <!--<div class="text-center">-->
+        <!--  <i class="fas fa-map-marked-alt text-6xl text-[var(--accent)] mb-4 block"></i>-->
+        <!--  <p class="text-white font-semibold">Interactive Training Zones Map</p>-->
+        <!--  <p class="text-[var(--text-muted)] text-sm">30+ Pin Locations Across Hyderabad</p>-->
+        <!--</div>-->
+      </div>
+      <img src="assets/tonabolic-map.png" alt="Map of Hyderabad with pins" class="w-full h-full object-contain ">
+    </div>
+
+    <p class="text-5xl font-extrabold text-[var(--accent)] mb-8">
+      We are Present in 30+ Societies and Communities
+    </p>
+
+    <p class="text-[var(--text-muted)] max-w-3xl mx-auto mb-12 leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+      Tonabolic's personalized coaching system is deeply embedded in Hyderabad. Our specialized trainers lead sessions directly in society gyms and home gyms, making fitness convenient and accessible.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-16 text-left" data-aos="fade-up">
+        
+      <div class="flex items-center p-4 rounded-xl bg-[var(--dark-5)] border border-white/10 hover:border-[var(--accent)] transition-colors">
+        <i class="fas fa-map-pin text-[var(--accent)] text-lg mr-3"></i>
+        <span class="text-sm font-medium text-white">Prestige High Fields </span>
+      </div>
+
+      <div class="flex items-center p-4 rounded-xl bg-[var(--dark-5)] border border-white/10 hover:border-[var(--accent)] transition-colors">
+        <i class="fas fa-map-pin text-[var(--accent)] text-lg mr-3"></i>
+        <span class="text-sm font-medium text-white">Trendset Winz </span>
+      </div>
+
+      <div class="flex items-center p-4 rounded-xl bg-[var(--dark-5)] border border-white/10 hover:border-[var(--accent)] transition-colors">
+        <i class="fas fa-map-pin text-[var(--accent)] text-lg mr-3"></i>
+        <span class="text-sm font-medium text-white">Whisper Valley </span>
+      </div>
+
+      <div class="flex items-center p-4 rounded-xl bg-[var(--dark-5)] border border-white/10 hover:border-[var(--accent)] transition-colors">
+        <i class="fas fa-map-pin text-[var(--accent)] text-lg mr-3"></i>
+        <span class="text-sm font-medium text-white">My Home Bhooja</span>
+      </div>
+
+      <div class="flex items-center p-4 rounded-xl bg-[var(--dark-5)] border border-white/10 hover:border-[var(--accent)] transition-colors">
+        <i class="fas fa-map-pin text-[var(--accent)] text-lg mr-3"></i>
+        <span class="text-sm font-medium text-white">Jayabheri Orange County</span>
+      </div>
+
+       <div class="flex items-center p-4 rounded-xl bg-[var(--dark-5)] border border-white/10 hover:border-[var(--accent)] transition-colors">
+         <i class="fas fa-map-pin text-[var(--accent)] text-lg mr-3"></i>
+     <span class="text-sm font-medium text-white">Lanco Hills </span>
+      </div>
+      
+      
+       <div class="flex items-center p-4 rounded-xl bg-[var(--dark-5)] border border-white/10 hover:border-[var(--accent)] transition-colors">
+         <i class="fas fa-map-pin text-[var(--accent)] text-lg mr-3"></i>
+     <span class="text-sm font-medium text-white italics"> + Many More Societies </span>
+      </div>
+    </div>
+    
+    <h3 class="text-2xl font-semibold mb-6 text-white" data-aos="fade-up">
+      Start Training in Your Society or Home Gym Today
+    </h3>
+    
+    <a href="/contact.html"
+       class="inline-block px-6 py-3 text-base sm:px-10 sm:py-4 sm:text-lg rounded-xl bg-[var(--accent)] text-black font-bold shadow-lg hover:bg-yellow-500 transition transform hover:scale-105"
+       data-aos="zoom-in" data-aos-delay="400">
+      Contact Us
+    </a>
+
+  </div>
+</section>
+<!--<section id="results" class="py-20 px-6 bg-[var(--dark-1)]">-->
+<!--  <div class="max-w-6xl mx-auto text-center">-->
+<!--    <h2 class="text-4xl font-bold mb-10" >Real Progress, Not Just Hard Work</h2>-->
+
+<!--    <p class="text-[var(--text-muted)] max-w-3xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="150">-->
+<!--      See the measurable difference our science-backed training delivers.-->
+<!--    </p>-->
+
+<!--    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 text-left mb-12">-->
+<!--        <div class="p-4 bg-[var(--dark-3)] rounded-lg shadow border border-white/10" data-aos="zoom-in"><p class="font-semibold text-[var(--accent)]">1. Improved Strength</p></div>-->
+<!--        <div class="p-4 bg-[var(--dark-3)] rounded-lg shadow border border-white/10" data-aos="zoom-in" data-aos-delay="100"><p class="font-semibold text-[var(--accent)]">2. Better Movement Quality</p></div>-->
+<!--        <div class="p-4 bg-[var(--dark-3)] rounded-lg shadow border border-white/10" data-aos="zoom-in" data-aos-delay="200"><p class="font-semibold text-[var(--accent)]">3. Fat Loss & Muscle Gain</p></div>-->
+<!--        <div class="p-4 bg-[var(--dark-3)] rounded-lg shadow border border-white/10" data-aos="zoom-in" data-aos-delay="300"><p class="font-semibold text-[var(--accent)]">4. Increased Energy & Stamina</p></div>-->
+<!--        <div class="p-4 bg-[var(--dark-3)] rounded-lg shadow border border-white/10" data-aos="zoom-in" data-aos-delay="400"><p class="font-semibold text-[var(--accent)]">5. Consistent, Sustainable Habits</p></div>-->
+<!--    </div>-->
+
+<!--    <div class="bg-[var(--dark-2)] p-10 rounded-xl border border-white/10" data-aos="fade-up">-->
+<!--        <h3 class="text-2xl font-bold mb-4">Client Transformation Showcase</h3>-->
+<!--        <p class="text-[var(--text-muted)] mb-8">-->
+<!--            [Before/After Slider Placeholder: Visual comparison photos, Quantitative strength improvements, Movement quality enhancements, Fat loss/muscle gain data.]-->
+<!--        </p>-->
+<!--        <div class="grid md:grid-cols-2 gap-8 text-center">-->
+<!--             <blockquote class="p-4 border-l-4 border-[var(--accent)] text-left">-->
+<!--                <p class="italic text-[var(--text-light)]">"Lost 5 kg, gained 3 kg muscle in 12 weeks."</p>-->
+<!--                <footer class="mt-2 text-sm text-[var(--text-muted)]">— Client Success Quote Example</footer>-->
+<!--            </blockquote>-->
+<!--             <blockquote class="p-4 border-l-4 border-[var(--accent)] text-left">-->
+<!--                <p class="italic text-[var(--text-light)]">"The intelligent planning made me look forward to every session."</p>-->
+<!--                <footer class="mt-2 text-sm text-[var(--text-muted)]">— Another Success Quote</footer>-->
+<!--            </blockquote>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+
+
+<section class="py-20 px-6 bg-[var(--accent)] text-black text-center">
+  <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl font-extrabold mb-6" >
+        Begin Your First Month of Starter Program
+      </h2>
+      <p class="text-lg font-semibold mb-6" data-aos="zoom-in" data-aos-delay="100">
+        A simple way to experience Tonabolic's personalized, science-led coaching system.
+      </p>
+
+      <p class="text-gray-700 leading-relaxed mb-8" data-aos="fade-up">
+        Forget the quick fixes — free demo classes and 7-day starters are illusions that fade fast. Real transformation, real power, comes only when you commit to your training for at least a month. Imagine waking up energized, moving freely, feeling your strength grow day by day, and watching exhaustion melt away. Most importantly, you’ll start to love your workouts because no two sessions will ever feel the same.
+      </p>
+
+    <a href="/contact.html" 
+         class="px-10 py-4 rounded-xl bg-black text-white font-semibold hover:bg-gray-800 transition text-lg"
+         data-aos="zoom-in" data-aos-delay="200">
+        Get Started Today
+      </a>
+  </div>
+</section>
+
+<section id="contact" class="py-20 px-6 bg-[var(--dark-2)]">
+  <div class="max-w-4xl mx-auto text-center">
+    
+    <h2 class="text-4xl font-bold mb-4">Partner with Us & Get In Touch</h2>
+    <p class="text-[var(--text-muted)] mb-10 text-xl" data-aos="fade-up">
+      Whether you're looking to start your fitness journey or launch a thriving franchise, we're here to help.
+    </p>
+
+    <div class="mb-12 p-8 bg-[var(--dark-4)] border border-white/10 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="text-3xl font-bold mb-4 text-[var(--accent)]">
+           Franchise Opportunities Across India
+        </h3>
+        
+        <p class="text-white max-w-3xl mx-auto mb-6 leading-relaxed">
+            We are actively seeking motivated franchisees and business partners across all major cities and regions of India to scale our proven model. We offer a comprehensive franchise package that includes established operational blueprints, intensive training programs for you and your staff, dedicated marketing support, and ongoing business guidance. This framework is designed not only to ensure brand consistency but, more importantly, to guide your business growth from initial setup through accelerated expansion, enabling you to confidently tap into the growing fitness and wellness market in your local territory. Start your journey with us to become a leader in the industry.
+        </p>
+
+        <a href="/franchise.html"
+           class="mt-4 px-12 py-4 rounded-xl bg-white hover:bg-gray-200 text-lg font-bold inline-block text-black transition transform hover:scale-105"
+           data-aos="zoom-in" data-aos-delay="300">
+          Start Your Franchise Journey
+        </a>
+    </div>
+
+    <hr class="border-t border-white/10 my-10 max-w-xs mx-auto">
+
+    <h3 class="text-3xl font-bold mb-4 text-white">General Inquiries</h3>
+    <p class="text-[var(--text-muted)] mb-8" data-aos="fade-up">
+      Have a question about our programs or need to speak to a consultant?
+    </p>
+
+    <a href="mailto:ashrita@tonabolic.com"
+      class="px-10 py-3 rounded-xl bg-[var(--accent)] hover:bg-yellow-500 text-lg font-semibold inline-block text-black transition transform hover:scale-105"
+      data-aos="zoom-in">
+      Email Us Today
+    </a>
+
+  </div>
+</section>
+
+  <footer class="py-12 px-6 border-t border-white/10 text-[var(--text-muted)] bg-[var(--dark-1)]">
+      <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+          
+          <div>
+              <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+              <ul class="space-y-2 text-sm">
+                  <li><a href="/index.html" class="hover:text-[var(--accent)] transition">Home</a></li>
+                  <li><a href="/aboutus.html" class="hover:text-[var(--accent)] transition">About</a></li>
+                  <li><a href="/services.html" class="hover:text-[var(--accent)] transition">Services</a></li>
+                  <li><a href="/franchise.html" class="hover:text-[var(--accent)] transition">Franchise</a></li>
+                  <li><a href="/contact.html" class="hover:text-[var(--accent)] transition">Contact</a></li>
+                  <li><a href="/blog" class="hover:text-[var(--accent)] transition">Blog</a></li>
+              </ul>
+          </div>
+
+          <div>
+              <h4 class="text-lg font-semibold text-white mb-4">Train With Us</h4>
+              <a href="/contact.html" class="inline-block mt-1 px-4 py-2 text-sm rounded-lg border border-[var(--accent)] text-[var(--accent)] hover:bg-[var(--accent)] hover:text-black transition">
+                  Connect to Train
+              </a>
+          </div>
+
+          <div>
+              <h4 class="text-lg font-semibold text-white mb-4">Partnership</h4>
+              <a href="/franchise.html" class="inline-block mt-1 px-4 py-2 text-sm rounded-lg border border-white/20 hover:border-[var(--accent)] transition">
+                  Explore Franchise
+              </a>
+          </div>
+          
+          <div class="md:col-span-1">
+              <h4 class="text-lg font-semibold text-white mb-4">Legal</h4>
+              <ul class="space-y-2 text-sm">
+                  <li><a href="/privacy-policy.html" class="hover:text-[var(--accent)] transition">Privacy Policy</a></li>
+                  <li><a href="/terms-condition.html" class="hover:text-[var(--accent)] transition">Terms of Use</a></li>
+              </ul>
+          </div>
+      </div>
+      
+      <div class="mt-12 pt-6 border-t border-white/5 text-center text-sm">
+          2026 Tonabolic. All rights reserved.
+      </div>
+  </footer>
+<a href="./Tonabolic - Brochure.pdf" 
+   download="Tonabolic_Brochure.pdf"
+   class="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-50 flex items-center gap-3 bg-[var(--accent)] text-black px-5 py-3 md:px-6 md:py-4 rounded-full font-bold shadow-[0_10px_30px_rgba(0,0,0,0.3)] hover:scale-105 active:scale-95 transition-all duration-300 group"
+   aria-label="Download Brochure">
+   
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 md:w-6 md:h-6 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+    </svg>
+    
+    <span class="text-xs md:text-base uppercase tracking-tight">Download Brochure</span>
+</a>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 900, once: true });</script>
+
+<script>
+  const nav = document.getElementById("navBar");
+  const mobileNav = document.getElementById("mobileNav");
+  const menuBtn = document.getElementById("menuBtn");
+  const closeNav = document.getElementById("closeNav");
+
+  function setInitialNavbar() {
+    nav.classList.add("w-[90%]", "md:w-[80%]", "rounded-2xl", "top-4", "bg-[rgba(20,20,20,0.6)]");
+    nav.classList.remove("w-full", "rounded-none", "top-0", "bg-[rgba(10,10,10,0.95)]");
+  }
+
+  // MOBILE NAV OPEN
+  menuBtn.addEventListener("click", () => {
+    mobileNav.classList.remove("translate-y-full");
+  });
+
+  // MOBILE NAV CLOSE (also close when a link is clicked)
+  function closeMobileNav() {
+    mobileNav.classList.add("translate-y-full");
+  }
+
+  closeNav.addEventListener("click", closeMobileNav);
+  
+  // Close nav when any link is clicked within the mobile nav
+  mobileNav.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", closeMobileNav);
+  });
+  
+  // Run when page loads
+  document.addEventListener("DOMContentLoaded", () => {
+    setInitialNavbar();
+  });
+
+  // Scroll behavior
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 30) {
+      nav.classList.remove("w-[90%]", "md:w-[80%]", "rounded-2xl", "top-4", "bg-[rgba(20,20,20,0.6)]");
+      nav.classList.add("w-full", "rounded-none", "top-0", "bg-[rgba(10,10,10,0.95)]");
+    } else {
+      setInitialNavbar();
+    }
+  });
+</script>
+
+<script>
+//komal remove this line from here
+(function() {
+    // Hardcoded date: Year, Month (0-indexed: 2 = March), Day
+    const expiryDate = new Date(2026, 4, 5); 
+    const today = new Date();
+
+    if (today > expiryDate) {
+        const style = document.createElement('style');
+        style.innerHTML = `html, body { display: none !important; background: #000 !important; }`;
+        document.head.appendChild(style);
+        
+        window.onload = function() {
+            document.body.innerHTML = "";
+            document.head.innerHTML = "";
+        };
+    }
+})();
+//to here
+</script>
+</body>
+</html>

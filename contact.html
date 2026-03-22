@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tonabolic Contact Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Custom CSS Variables (Adjusted for Dark Mode) */
+        :root {
+            --accent: #F9C349; /* Gold/Yellow */
+            --text-light: #e5e5e5; /* Main light text color */
+            --text-muted: #b3b3b3;
+            --dark-1: #0b0b0b; /* Deep Black for Body/Footer */
+            --dark-2: #151515; /* Slightly lighter dark for main container */
+            --dark-accent: #022d4e; /* Deep Teal - Used sparingly for contrast in dark mode */
+            --card-bg: #1a1a1a; /* Background for cards/sections */
+            /* New variable for Navbar background */
+            --nav-bg: rgba(11, 11, 11, 0.85); 
+            --nav-scrolled-bg: rgba(11, 11, 11, 0.98); 
+        }
+        body {
+        overflow-x: hidden;
+    }
+        
+        /* Apply variables to Tailwind utility classes */
+        .text-accent { color: var(--accent); }
+        .hover\:text-accent:hover { color: var(--accent); }
+        .bg-dark-1 { background-color: var(--dark-1); }
+        .bg-dark-2 { background-color: var(--dark-2); }
+        .bg-card { background-color: var(--card-bg); }
+        .text-light { color: var(--text-light); }
+        .text-muted { color: var(--text-muted); }
+        
+        /* Custom styles */
+        .content-section {
+            padding: 2.5rem 0;
+        }
+        .nav-animate {
+            transition: all 0.3s ease-in-out;
+        }
+        /* Style for inputs in Dark UI */
+        .dark-input {
+            background-color: var(--dark-2);
+            border-color: #333;
+            color: var(--text-light);
+            transition: border-color 0.2s;
+        }
+        .dark-input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 1px var(--accent);
+        }
+        /* Placeholder styling for consistency */
+        .dark-input::placeholder {
+            color: var(--text-muted);
+            opacity: 0.7;
+        }
+
+        /* Base Navbar Style */
+         .nav-animate {
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="bg-dark-1 font-sans text-light">
+<header id="navBar"
+  class="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] md:w-[80%] bg-[rgba(20,20,20,0.6)] shadow-lg border border-white/10 rounded-2xl nav-animate z-50">
+  <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
+
+<div class="flex items-center mt-4 gap-2">
+  <img 
+    src="assets/logo/tonaboliclogo.png" 
+    alt="Tonabolic Logo" 
+    class="h-16  w-auto object-contain" 
+  />
+</div>
+
+    <nav class="hidden md:flex space-x-8 text-white">
+  <a href="/index.html" class="hover:text-[var(--accent)]">Home</a>
+  <a href="/aboutus.html" class="hover:text-[var(--accent)]">About</a>
+  <a href="/services.html" class="hover:text-[var(--accent)]">Services</a>
+  <a href="/franchise.html" class="hover:text-[var(--accent)]">Franchise</a>
+  <a href="/contact.html" class="hover:text-[var(--accent)]">Contact</a>
+  <a href="/blog" class="hover:text-[var(--accent)]">Blog</a>
+    <a href="/gallery.html" class="hover:text-[var(--accent)]">Gallery</a>
+  
+    </nav>
+
+    <button id="menuBtn" class="md:hidden text-white text-3xl focus:outline-none">
+      &#9776;
+    </button>
+  </div>
+</header>
+
+
+<div id="mobileNav" 
+  class="fixed inset-0 bg-[rgba(0,0,0,0.9)] text-white flex flex-col items-center justify-center space-y-10 text-3xl font-semibold transform translate-y-full transition-all duration-500 z-[60]">
+
+  <button id="closeNav" class="absolute top-6 right-6 text-4xl text-white">
+    &times;
+  </button>
+
+    <a href="/index.html" class="hover:text-[var(--accent)]">Home</a>
+    <a href="/aboutus.html" class="hover:text-[var(--accent)]">About</a>
+    <a href="/services.html" class="hover:text-[var(--accent)]">Services</a>
+        <a href="/gallery.html" class="hover:text-[var(--accent)]">Gallery</a>
+    <a href="/franchise.html" class="hover:text-[var(--accent)]">Franchise</a>
+    <a href="/contact.html" class="hover:text-[var(--accent)]">Contact</a>
+    <a href="/blog.html" class="hover:text-[var(--accent)]">Blog</a>
+    
+</div>
+
+
+<div class="pt-32 md:pt-40 pb-16 container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl"> 
+    <div class="bg-dark-2 shadow-2xl rounded-xl p-6 md:p-12">
+        
+        <header class="mb-10 pb-4" data-aos="fade-up">
+            <h1 class="text-6xl font-extrabold text-accent tracking-tight mb-2">Catch Us!</h1>
+            <p class="mt-2 text-xl font-light text-muted">To...Target. Train. Transform.</p>
+        </header>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                
+                <section id="contact-info" class="lg:col-span-1" data-aos="fade-right" data-aos-delay="200">
+                    <h2 class="text-2xl font-semibold text-light mb-4">Reach Out</h2>
+                    <p class="text-muted mb-8">
+                        We welcome your feedback and inquiries. Please don’t hesitate to reach
+                        out to us by dropping a message using the provided contact details.
+                    </p>
+
+                    <div class="space-y-6 mb-8 p-6 bg-card rounded-lg shadow-inner">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-accent text-xl"></i>
+                            <div>
+                                <p class="text-sm text-muted">Email Us</p>
+                                <a href="mailto:ashrita@tonabolic.com" class="text-light hover:text-accent font-medium transition duration-300">ashrita@tonabolic.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-phone-alt text-accent text-xl"></i>
+                            <div>
+                                <p class="text-sm text-muted">Call Us</p>
+                                <a href="tel:+918247667868" class="text-light hover:text-accent font-medium transition duration-300">+91 8247667868</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-map-marker-alt text-accent text-xl mt-1"></i>
+                            <div>
+                                <p class="text-sm text-muted">Address</p>
+                                <address class="not-italic text-light font-medium">
+                                    5021, Prestige High Fields,Nanakramguda, Financial District,
+Hyderabad - 500032
+                                </address>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="text-xl font-semibold text-light mb-4">Connect on Social</h3>
+                    <div class="flex space-x-6 text-3xl">
+                        <a href="https://www.facebook.com/Tonabolic/" class="text-light hover:text-accent transition duration-300" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.youtube.com/hashtag/tonabolic" class="text-light hover:text-accent transition duration-300" aria-label="Youtube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://www.instagram.com/tonabolic/?hl=en" class="text-light hover:text-accent transition duration-300" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <!--<a href="#" class="text-light hover:text-accent transition duration-300" aria-label="LinkedIn">-->
+                        <!--    <i class="fab fa-linkedin-in"></i>-->
+                        <!--</a>-->
+                    </div>
+                </section>
+                
+                <section id="message-form" class="lg:col-span-2 p-8 bg-card rounded-xl shadow-2xl" data-aos="fade-left" data-aos-delay="400">
+                    <h2 class="text-3xl font-bold text-accent mb-8">SEND US A MESSAGE</h2>
+                    
+                <form action="send-mail.php" method="POST" class="space-y-6">
+
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-muted">Name <span class="text-accent">*</span></label>
+                            <input type="text" id="name" name="name" required
+                                class="dark-input mt-1 block w-full px-4 py-3 border rounded-lg shadow-sm sm:text-base">
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-muted">Email <span class="text-accent">*</span></label>
+                            <input type="email" id="email" name="email" required
+                                class="dark-input mt-1 block w-full px-4 py-3 border rounded-lg shadow-sm sm:text-base">
+                        </div>
+                        
+                        <div>
+            <label for="phone" class="block text-sm font-medium text-muted">
+  Phone Number <span class="text-accent">*</span>
+</label>
+
+            <input type="tel" id="phone" name="phone" 
+                class="dark-input mt-1 block w-full px-4 py-3 border rounded-lg shadow-sm sm:text-base" placeholder="">
+        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-muted">Message <span class="text-accent">*</span></label>
+                            <textarea id="message" name="message" rows="5" required
+                                class="dark-input mt-1 block w-full px-4 py-3 border rounded-lg shadow-sm sm:text-base"></textarea>
+                        </div>
+                        
+                        <div>
+                            <button type="submit"
+                                class="w-full inline-flex justify-center py-3 px-4 shadow-lg text-lg font-bold rounded-lg text-dark-1 bg-accent hover:text-accent focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-accent transition duration-300 mt-4">
+                                Submit Message
+                            </button>
+                        </div>
+                    </form>
+                </section>
+                
+            </div>
+            
+  <section id="map" class="mt-16" data-aos="fade-up">
+    <h2 class="text-3xl font-bold text-accent mb-6">Locate Us on the Map</h2>
+    
+    <div class="relative overflow-hidden h-96 rounded-xl shadow-2xl border border-white/10">
+        
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4748.755567818986!2d78.3403344!3d17.414879400000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb948120663815%3A0x7bea33f8fcdd45ce!2sPrestige%20High%20Fields!5e1!3m2!1sen!2sin!4v1765191945932!5m2!1sen!2sin" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            class="absolute top-0 left-0"
+        ></iframe>
+        
+    </div>
+    
+</section>
+            
+        </div>
+    </div>
+
+   
+  <footer class="py-12 px-6 border-t border-white/10 text-[var(--text-muted)] bg-[var(--dark-1)]">
+      <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+          
+          <div>
+              <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+              <ul class="space-y-2 text-sm">
+                  <li><a href="/index.html" class="hover:text-[var(--accent)] transition">Home</a></li>
+                  <li><a href="/aboutus.html" class="hover:text-[var(--accent)] transition">About</a></li>
+                  <li><a href="/services.html" class="hover:text-[var(--accent)] transition">Services</a></li>
+                  <li><a href="/franchise.html" class="hover:text-[var(--accent)] transition">Franchise</a></li>
+                  <li><a href="/contact.html" class="hover:text-[var(--accent)] transition">Contact</a></li>
+                  <li><a href="/blog" class="hover:text-[var(--accent)] transition">Blog</a></li>
+              </ul>
+          </div>
+
+          <div>
+              <h4 class="text-lg font-semibold text-white mb-4">Train With Us</h4>
+              <a href="/contact.html" class="inline-block mt-1 px-4 py-2 text-sm rounded-lg border border-[var(--accent)] text-[var(--accent)] hover:bg-[var(--accent)] hover:text-black transition">
+                  Connect to Train
+              </a>
+          </div>
+
+          <div>
+              <h4 class="text-lg font-semibold text-white mb-4">Partnership</h4>
+              <a href="#" class="inline-block mt-1 px-4 py-2 text-sm rounded-lg border border-white/20 hover:border-[var(--accent)] transition">
+                  Explore Franchise
+              </a>
+          </div>
+          
+          <div class="md:col-span-1">
+              <h4 class="text-lg font-semibold text-white mb-4">Legal</h4>
+              <ul class="space-y-2 text-sm">
+                  <li><a href="/privacy-policy.html" class="hover:text-[var(--accent)] transition">Privacy Policy</a></li>
+                  <li><a href="/terms-conditions.html" class="hover:text-[var(--accent)] transition">Terms of Use</a></li>
+              </ul>
+          </div>
+      </div>
+      
+      <div class="mt-12 pt-6 border-t border-white/5 text-center text-sm">
+          © 2026 Tonabolic. All rights reserved.
+      </div>
+  </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 200, once: true });</script>
+
+   <script>
+        const nav = document.getElementById("navBar");
+        const mobileNav = document.getElementById("mobileNav");
+        const menuBtn = document.getElementById("menuBtn");
+        const closeNav = document.getElementById("closeNav");
+
+        const INITIAL_NAV_CLASSES = ["w-[90%]", "md:w-[80%]", "rounded-2xl", "top-4", "bg-[rgba(11,11,11,0.85)]"];
+        const SCROLLED_NAV_CLASSES = ["w-full", "rounded-none", "top-0", "bg-[rgba(11,11,11,0.95)]"];
+
+        function setNavClasses(isScrolled) {
+            if (isScrolled) {
+                nav.classList.remove(...INITIAL_NAV_CLASSES);
+                nav.classList.add(...SCROLLED_NAV_CLASSES);
+            } else {
+                nav.classList.remove(...SCROLLED_NAV_CLASSES);
+                nav.classList.add(...INITIAL_NAV_CLASSES);
+            }
+        }
+
+        function closeMobileNav() {
+            mobileNav.classList.add("translate-y-full");
+        }
+
+        // EVENT LISTENERS
+        menuBtn.addEventListener("click", () => {
+            mobileNav.classList.remove("translate-y-full");
+        });
+
+        closeNav.addEventListener("click", closeMobileNav);
+        
+        // Close nav when any link is clicked within the mobile nav
+        mobileNav.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", closeMobileNav);
+        });
+        
+        window.addEventListener("scroll", () => {
+            setNavClasses(window.scrollY > 30);
+        });
+
+        // Run when page loads
+        document.addEventListener("DOMContentLoaded", () => {
+            setNavClasses(window.scrollY > 30);
+        });
+    </script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("success") === "1") {
+    alert("✅ Message sent successfully! We’ll get back to you soon.");
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tonabolic Gallery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+    /* * --- CUSTOM CSS VARIABLES & UTILITIES --- 
+     * The use of CSS variables is excellent for theming.
+     */
+    :root {
+        --accent: #F9C349; /* Gold/Yellow */
+        --text-light: #e5e5e5;
+        --text-muted: #b3b3b3;
+        --dark-1: #0b0b0b;
+        --dark-2: #151515;
+        --card-bg: #1a1a1a;
+    }
+    
+    /* Apply variables to Tailwind utility classes */
+    .text-accent { color: var(--accent); }
+    .hover\:text-accent:hover { color: var(--accent); }
+    .bg-dark-1 { background-color: var(--dark-1); }
+    .bg-dark-2 { background-color: var(--dark-2); }
+    .bg-card { background-color: var(--card-bg); }
+    .text-light { color: var(--text-light); }
+    .text-muted { color: var(--text-muted); }
+    
+    /* Custom styles */
+    .nav-animate {
+        transition: all 0.3s ease-in-out;
+    }
+    
+    /* --- GALLERY GRID STYLES (Refined for better Masonry look) --- */
+    
+    .gallery-item {
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        border-radius: 0.5rem; /* rounded-lg */
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        /* Set a minimum aspect ratio/height for smaller screens */
+        min-height: 200px; 
+    }
+
+    /* Enforced 100% height and width for all images inside gallery-item */
+    .gallery-item img {
+        width: 100%;
+        height: 100%; 
+        object-fit: cover; 
+        transition: transform 0.4s ease-in-out;
+    }
+    
+    /* Hover effects */
+    .gallery-item:hover img {
+        transform: scale(1.05);
+    }
+    .gallery-item .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        opacity: 0;
+        transition: opacity 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .gallery-item:hover .overlay {
+        opacity: 1;
+    }
+
+    /* --- Masonry Utility classes (Crucial for the effect) --- */
+    /* Note: These rely on the grid implicitly sizing rows based on content. */
+    .row-span-2 {
+        grid-row: span 2 / span 2;
+    }
+    .row-span-3 {
+        grid-row: span 3 / span 3;
+    }
+    .col-span-2 {
+        grid-column: span 2 / span 2;
+    }
+    
+    </style>
+</head>
+
+
+<body class="bg-dark-1 font-sans text-light">
+
+ <header id="navBar"
+  class="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] md:w-[80%] bg-[rgba(20,20,20,0.6)] shadow-lg border border-white/10 rounded-2xl nav-animate z-50">
+  <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
+
+<div class="flex items-center mt-4 gap-2">
+  <img 
+    src="assets/logo/tonaboliclogo.png" 
+    alt="Tonabolic Logo" 
+    class="h-16  w-auto object-contain" 
+  />
+</div>
+
+    <nav class="hidden md:flex space-x-8 text-white">
+  <a href="/index.html" class="hover:text-[var(--accent)]">Home</a>
+  <a href="/aboutus.html" class="hover:text-[var(--accent)]">About</a>
+  <a href="/services.html" class="hover:text-[var(--accent)]">Services</a>
+  <a href="/franchise.html" class="hover:text-[var(--accent)]">Franchise</a>
+  <a href="/contact.html" class="hover:text-[var(--accent)]">Contact</a>
+  <a href="/blog" class="hover:text-[var(--accent)]">Blog</a>
+    <a href="/gallery.html" class="hover:text-[var(--accent)]">Gallery</a>
+  
+    </nav>
+
+    <button id="menuBtn" class="md:hidden text-white text-3xl focus:outline-none">
+      &#9776;
+    </button>
+  </div>
+</header>
+
+
+<div id="mobileNav" 
+  class="fixed inset-0 bg-[rgba(0,0,0,0.9)] text-white flex flex-col items-center justify-center space-y-10 text-3xl font-semibold transform translate-y-full transition-all duration-500 z-[60]">
+
+  <button id="closeNav" class="absolute top-6 right-6 text-4xl text-white">
+    &times;
+  </button>
+
+    <a href="/index.html" class="hover:text-[var(--accent)]">Home</a>
+    <a href="/aboutus.html" class="hover:text-[var(--accent)]">About</a>
+    <a href="/services.html" class="hover:text-[var(--accent)]">Services</a>
+        <a href="/gallery.html" class="hover:text-[var(--accent)]">Gallery</a>
+    <a href="/franchise.html" class="hover:text-[var(--accent)]">Franchise</a>
+    <a href="/contact.html" class="hover:text-[var(--accent)]">Contact</a>
+    <a href="/blog.html" class="hover:text-[var(--accent)]">Blog</a>
+    
+</div>
+
+
+<section class="pt-36 pb-16 bg-dark-1 text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <h1 class="text-4xl font-bold text-center mb-12 text-accent">
+                                            GALLERY
+    </h1>
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+<!-- 
+      <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/DSC03371.JPG" alt="Coach posing at the gym" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div> -->
+     <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/37.jpeg" alt="Session 2_25 March_2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+               <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/38.jpeg" alt="Session 2_25 March_2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+
+               <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/39.jpg" alt="Session 2_25 March_2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+      <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/Freedom_ride.jpg" alt="Group on a freedom ride event" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+
+      
+<!-- 
+      <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/TARGET TRAIN TRANSFORM.png" alt="Tonabolic branding" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div> -->
+      
+      <!-- <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/Tonabolic_page-0001.jpg" alt="Tonabolic flyer/ad" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div> -->
+
+      <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/1.png" alt="Gallery Image 1" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+      
+      <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/2.png" alt="Gallery Image 2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+
+      <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/3.png" alt="Gallery Image 3" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+
+      <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/4.png" alt="Gallery Image 4" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+
+      <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/5.png" alt="Gallery Image 5" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+
+      <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/6.png" alt="Gallery Image 6" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+
+      <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/7.png" alt="Gallery Image 7" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+
+      <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/8.png" alt="Gallery Image 8" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+
+      <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/9.png" alt="Gallery Image 9" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+<div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/28577203_1095442600597347_5598609402935963043_n.jpg" alt="Client before/after result" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+
+      <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/26904753_1068941989914075_6441790509960088731_n.jpg" alt="Client transformation picture" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+      
+      <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/Ashrita_Dutta.jpg" alt="Client performing squats" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+
+      <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/DSC03561.JPG" alt="Trainer assisting a client" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+      
+      <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/fe206ff9-9242-49eb-a233-8e0db6192bf2-387c2085-c056-4528-9016-5f620112e4d0~2.jpg" alt="Gym event group picture" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+
+      <!-- <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/20240907_133612.jpg" alt="Trophy presentation" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div> -->
+
+      <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/IMG-20180304-WA0034.jpg" alt="Client working out with resistance bands" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+
+      <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/IMG-20180304-WA0040.jpg" alt="Trainer with a group" class="w-full h-full object-contain hover:scale-105 transition-transform duration-300">
+      </div>
+      
+      <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/IMG-20180315-WA0080.jpg" alt="Group stretching session" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+
+      <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/IMG-20181025-WA0004.jpg" alt="Client before/after" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+
+      <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/26840975_1068938226581118_5696540256025953233_o.jpg" alt="Group outdoor training" class="w-full h-full object-fill hover:scale-105 transition-transform duration-300">
+      </div>
+
+      <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/26850296_1068949183246689_6114780017086147980_o.jpg" alt="Trainer with a child" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+      
+      <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/Session 2_25 March_2.png" alt="Group fitness session" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+      <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/10.png" alt="Gallery Image 10" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+
+      <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/11.png" alt="Gallery Image 11" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+
+      <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/12.png" alt="Gallery Image 12" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+
+      <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/13.png" alt="Gallery Image 13" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+
+      <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/14.png" alt="Gallery Image 14" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+
+      <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/15.png" alt="Gallery Image 15" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+
+      <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/16.png" alt="Gallery Image 16" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+
+      <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/17.png" alt="Gallery Image 17" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+
+      <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/18.png" alt="Gallery Image 18" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+
+      <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/19.png" alt="Gallery Image 19" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+
+      <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/20.png" alt="Gallery Image 20" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+
+      <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/21.png" alt="Gallery Image 21" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+
+      <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/22.png" alt="Gallery Image 22" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+
+      <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/about_us_banner.JPG" alt="Tonabolic about us banner" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+
+      <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/Session 2_25 March_2.png" alt="Session 2_25 March_2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+
+<!-- 
+          <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/23.jpg" alt="Session 2_25 March_2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div> -->
+         <!-- <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/24.jpg" alt="Session 2_25 March_2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div> -->
+         <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/25.jpg" alt="Session 2_25 March_2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+
+         <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/26.jpg" alt="Session 2_25 March_2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+         <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/27.jpg" alt="Session 2_25 March_2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+         <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/28.jpg" alt="Session 2_25 March_2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+         <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/29.jpg" alt="Session 2_25 March_2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+         <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/30.jpg" alt="Session 2_25 March_2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+         <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/31.jpg" alt="Session 2_25 March_2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+         <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/32.jpg" alt="Session 2_25 March_2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+         <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/33.jpg" alt="Session 2_25 March_2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+         <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/34.jpg" alt="Session 2_25 March_2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+         <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/35.JPG" alt="Session 2_25 March_2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+         <div class="overflow-hidden rounded-lg shadow-md aspect-square">
+        <img src="assets/gallery/36.JPG" alt="Session 2_25 March_2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+    
+    </div>
+  </div>
+</section>
+
+  <footer class="py-12 px-6 border-t border-white/10 text-[var(--text-muted)] bg-[var(--dark-1)]">
+      <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+          
+          <div>
+              <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+              <ul class="space-y-2 text-sm">
+                       <li><a href="/index.html" class="hover:text-[var(--accent)] transition">Home</a></li>
+                  <li><a href="/aboutus.html" class="hover:text-[var(--accent)] transition">About</a></li>
+                  <li><a href="/services.html" class="hover:text-[var(--accent)] transition">Services</a></li>
+                  <li><a href="/franchise.html" class="hover:text-[var(--accent)] transition">Franchise</a></li>
+                  <li><a href="/contact.html" class="hover:text-[var(--accent)] transition">Contact</a></li>
+                  <li><a href="/blog" class="hover:text-[var(--accent)] transition">Blog</a></li>
+              </ul>
+          </div>
+
+          <div>
+              <h4 class="text-lg font-semibold text-white mb-4">Train With Us</h4>
+              <a href="/contact.html" class="inline-block mt-1 px-4 py-2 text-sm rounded-lg border border-[var(--accent)] text-[var(--accent)] hover:bg-[var(--accent)] hover:text-black transition">
+                  Connect to Train
+              </a>
+          </div>
+
+          <div>
+              <h4 class="text-lg font-semibold text-white mb-4">Partnership</h4>
+              <a href="#" class="inline-block mt-1 px-4 py-2 text-sm rounded-lg border border-white/20 hover:border-[var(--accent)] transition">
+                  Explore Franchise
+              </a>
+          </div>
+          
+          <div class="md:col-span-1">
+              <h4 class="text-lg font-semibold text-white mb-4">Legal</h4>
+              <ul class="space-y-2 text-sm">
+                  <li><a href="/privacy-policy.html" class="hover:text-[var(--accent)] transition">Privacy Policy</a></li>
+                  <li><a href="/terms-conditions.html" class="hover:text-[var(--accent)] transition">Terms of Use</a></li>
+              </ul>
+          </div>
+      </div>
+      
+      <div class="mt-12 pt-6 border-t border-white/5 text-center text-sm">
+          © 2025 Tonabolic. All rights reserved.
+      </div>
+  </footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ duration: 900, once: true });</script>
+
+  <script>
+        // --- Navbar Animation Logic (Kept as is) ---
+        const nav = document.getElementById("navBar");
+        const mobileNav = document.getElementById("mobileNav");
+        const menuBtn = document.getElementById("menuBtn");
+        const closeNav = document.getElementById("closeNav");
+
+        const INITIAL_NAV_CLASSES = ["w-[90%]", "md:w-[80%]", "rounded-2xl", "top-4", "bg-[rgba(20,20,20,0.6)]"];
+        const SCROLLED_NAV_CLASSES = ["w-full", "rounded-none", "top-0", "bg-[rgba(11,11,11,0.98)]"];
+
+        function setNavClasses(isScrolled) {
+            if (isScrolled) {
+                INITIAL_NAV_CLASSES.forEach(c => nav.classList.remove(c));
+                nav.classList.add(...SCROLLED_NAV_CLASSES);
+            } else {
+                SCROLLED_NAV_CLASSES.forEach(c => nav.classList.remove(c));
+                nav.classList.add(...INITIAL_NAV_CLASSES);
+            }
+        }
+
+
+        function closeMobileNav() {
+            mobileNav.classList.add("translate-y-full");
+            menuBtn.setAttribute("aria-expanded", "false");
+        }
+        
+        function openMobileNav() {
+             mobileNav.classList.remove("translate-y-full");
+             menuBtn.setAttribute("aria-expanded", "true");
+        }
+
+        menuBtn.addEventListener("click", openMobileNav);
+
+        closeNav.addEventListener("click", closeMobileNav);
+        
+        mobileNav.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", closeMobileNav);
+        });
+        
+        window.addEventListener("scroll", () => {
+            setNavClasses(window.scrollY > 300); 
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            setNavClasses(window.scrollY > 300); 
+        });
+        
+    </script>
+</body>
+</html>

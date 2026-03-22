@@ -1,0 +1,1654 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>About Us -Tonabolic</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+      <style>
+      :root {
+        --accent: #F9C349;
+        --text-light: #e5e5e5;
+        --text-muted: #b3b3b3;
+        --dark-1: #0b0b0b;
+        --dark-2: #111111;
+        --dark-3: #151515;
+        --dark-4: #1a1a1a;
+        --dark-5: #222222;
+        /* NEW COLOR ADDED: Deep Teal to pair with the gold accent */
+        --dark-accent: #022d4e; 
+      }
+
+      body {
+        background: var(--dark-1);
+        color: var(--text-light);
+        /* FONT CHANGE: Using Poppins for a clean, modern look */
+        font-family: 'Poppins', sans-serif;
+      }
+      
+      /* ✅ FIX: Strict overflow-x hiding on root elements to prevent vertical scrollbar issue from horizontal content shift (AOS) */
+      html, body {
+        /* overflow-x: hidden !important;  */
+      }
+    
+      
+      /* Target elements with AOS data attributes to prevent horizontal overflow during animation */
+      [data-aos] {
+        /* Relying on body/html fix, but ensuring no local override */
+      }
+
+      .brand-text {
+        color: var(--accent);
+      }
+
+      .nav-animate {
+        transition: all .35s ease;
+        backdrop-filter: blur(8px);
+      }
+      
+      /* Custom Arrow for Aside */
+      .aside-arrow {
+          position: absolute;
+          top: 50%;
+          right: -1.5rem; 
+          transform: translateY(-50%);
+          font-size: 5rem;
+          color: var(--accent);
+          z-index: 10;
+          opacity: 0.2;
+          animation: pulse 2s infinite;
+      }
+      
+      @keyframes pulse {
+        0% {
+          opacity: 0.2;
+          transform: translateY(-50%) scale(1);
+        }
+        50% {
+          opacity: 0.4;
+          transform: translateY(-50%) scale(1.05);
+        }
+        100% {
+          opacity: 0.2;
+          transform: translateY(-50%) scale(1);
+        }
+      }
+
+      /* Marquee Styling and Keyframes */
+      @keyframes marquee-horizontal {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%); 
+        }
+      }
+      
+      .marquee-container {
+        overflow: hidden;
+        white-space: nowrap;
+        position: relative;
+      }
+
+      .marquee-content {
+        display: inline-block;
+        animation: marquee-horizontal 25s linear infinite; /* Highly Animated */
+        padding-right: 2rem; /* Buffer to prevent snap at loop point */
+      }
+      
+      .marquee-content > span {
+        display: inline-block;
+        padding: 0 1.5rem; 
+      }
+      </style>
+  </head>
+  <body>
+      
+<header id="navBar"
+  class="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] md:w-[80%] bg-[rgba(20,20,20,0.6)] shadow-lg border border-white/10 rounded-2xl nav-animate z-50">
+  <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
+
+<div class="flex items-center mt-4 gap-2">
+  <img 
+    src="assets/logo/tonaboliclogo.png" 
+    alt="Tonabolic Logo" 
+    class="h-16  w-auto object-contain" 
+  />
+</div>
+
+    <nav class="hidden md:flex space-x-8 text-white">
+  <a href="/index.html" class="hover:text-[var(--accent)]">Home</a>
+  <a href="/aboutus.html" class="hover:text-[var(--accent)]">About</a>
+  <a href="/services.html" class="hover:text-[var(--accent)]">Services</a>
+  <a href="/franchise.html" class="hover:text-[var(--accent)]">Franchise</a>
+  <a href="/contact.html" class="hover:text-[var(--accent)]">Contact</a>
+  <a href="/blog" class="hover:text-[var(--accent)]">Blog</a>
+    <a href="/gallery.html" class="hover:text-[var(--accent)]">Gallery</a>
+      </nav>
+
+      <button id="menuBtn" class="md:hidden text-white text-3xl focus:outline-none">
+        &#9776;
+      </button>
+    </div>
+  </header>
+
+
+  <div id="mobileNav" 
+    class="fixed inset-0 bg-[rgba(0,0,0,0.9)] text-white flex flex-col items-center justify-center space-y-10 text-3xl font-semibold transform translate-y-full transition-all duration-500 z-[60]">
+
+    <button id="closeNav" class="absolute top-6 right-6 text-4xl text-white">
+      &times;
+    </button>
+
+    <a href="/index.html" class="hover:text-[var(--accent)]">Home</a>
+    <a href="/aboutus.html" class="hover:text-[var(--accent)]">About</a>
+    <a href="/services.html" class="hover:text-[var(--accent)]">Services</a>
+        <a href="/gallery.html" class="hover:text-[var(--accent)]">Gallery</a>
+    <a href="/franchise.html" class="hover:text-[var(--accent)]">Franchise</a>
+    <a href="/contact.html" class="hover:text-[var(--accent)]">Contact</a>
+    <a href="/blog.html" class="hover:text-[var(--accent)]">Blog</a>
+    
+  </div>
+
+
+  <section class="relative min-h-screen flex items-center justify-center bg-[var(--dark-1)] px-6" data-aos="fade-up" data-aos-duration="1500">
+      
+      <div class="absolute inset-0">
+          <!--src="assets/gallery/TARGET TRAIN TRANSFORM.png" -->
+          <img 
+              
+              src="assets/About-us.jpeg" 
+              alt="A dynamic image illustrating personalized fitness training and coaching." 
+              class="w-auto h-full object-cover"
+              onerror="this.onerror=null; this.src='https://placehold.co/1920x1080/1F2937/D1D5DB?text=Image+Load+Failed';"
+          />
+          
+          <div class="absolute inset-0 bg-black/70"></div>
+      </div>
+
+      <div class="relative z-10 max-w-4xl text-center py-32 md:py-48"> 
+          
+          <h1 class="text-5xl md:text-7xl font-extrabold mb-6 text-white leading-tight" data-aos="zoom-in" data-aos-delay="200">
+              The Science of <span class="brand-text">Personalized</span> Functional Fitness
+          </h1>
+
+          <p class="text-xl text-white/90 mb-12 leading-relaxed font-light" data-aos="fade-up" data-aos-delay="500">
+            You receive a multi-coach led training model based on research-backed methodology. Say goodbye to the frustration of generic plans—instead, you get personalized support for your functional well-being, strength gains, mobility improvements, and sustainable progress. This works for every client, from kids to adults and seniors, with training customized to your unique needs.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4" data-aos="fade-up" data-aos-delay="800">
+              
+              <a href="#tonabolic-difference"
+                class="w-full sm:w-auto px-10 py-4 text-xl font-bold rounded-xl bg-[var(--accent)] text-black shadow-lg hover:bg-yellow-500 transition transform hover:scale-105">
+                Discover Our Unique Model
+              </a>
+
+              <a href="/contact.html"
+                class="w-full sm:w-auto px-10 py-4 text-xl font-bold rounded-xl border border-white/40 text-white hover:border-[var(--accent)] transition transform hover:scale-105">
+                Speak to a Consultant
+              </a>
+          </div>
+      </div>
+  </section>
+  <section id="progress-ticker" class="bg-[var(--accent)] py-5 border-y-4 border-black/20" data-aos="fade-up">
+      <div class="marquee-container text-black font-extrabold text-3xl sm:text-4xl uppercase whitespace-nowrap">
+          <div class="marquee-content">
+              <span class="inline-flex items-center gap-4">FUNCTIONAL STRENGTH <i class="fas fa-dumbbell text-4xl"></i></span>
+              <span class="inline-flex items-center gap-4">CUSTOMIZED PROGRAMS<i class="fas fa-users-gear text-4xl"></i></span>
+              <span class="inline-flex items-center gap-4">SCIENCE-BACKED TRAINING <i class="fas fa-flask text-4xl"></i></span>
+              <span class="inline-flex items-center gap-4">MOBILITY & JOINT HEALTH <i class="fas fa-person-running text-4xl"></i></span>
+              <span class="inline-flex items-center gap-4">SUSTAINABLE HABITS <i class="fas fa-seedling text-4xl"></i></span>
+           <span class="inline-flex items-center gap-4"> STAY INJURY FREE <i class="fas fa-shield-halved text-4xl"></i></span>
+              <span class="inline-flex items-center gap-4">FUNCTIONAL STRENGTH <i class="fas fa-dumbbell text-4xl"></i></span>
+              <span class="inline-flex items-center gap-4">CUSTOMIZED PROGRAMS <i class="fas fa-users-gear text-4xl"></i></span>
+              <span class="inline-flex items-center gap-4">SCIENCE-BACKED TRAINING <i class="fas fa-flask text-4xl"></i></span>
+              <span class="inline-flex items-center gap-4">MOBILITY & JOINT HEALTH <i class="fas fa-person-running text-4xl"></i></span>
+              <span class="inline-flex items-center gap-4">SUSTAINABLE HABITS <i class="fas fa-seedling text-4xl"></i></span>
+                              <span class="inline-flex items-center gap-4"> STAY INJURY FREE <i class="fas fa-shield-halved text-4xl"></i></span>
+          </div>
+      </div>
+  </section>
+
+<!-- CLEAN, CENTERED PDF EMBED SECTION -->
+<section class="p-8 flex justify-center">
+
+<div id="imageOnlyModal" class="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center p-4 hidden">
+        
+        <div class="relative max-w-lg w-full bg-white rounded-lg shadow-2xl p-0">
+            
+            <button id="closeImageModalBtn"
+                class="absolute top-3 left-3 z-10 text-gray-900 bg-white rounded-full p-1 hover:text-red-600 transition-colors shadow-md"
+                aria-label="Close image modal"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            
+            <img 
+                src="assets/gallery/Tonabolic_page-0001.jpg" 
+                alt="Modal Image Content" 
+                class="w-full h-auto object-contain rounded-lg"
+            />
+            
+        </div>
+    </div>
+</section>
+<!-- CLEAN, CENTERED PDF EMBED SECTION -->
+<section id="meet-the-founders" class="py-24 px-6 bg-[var(--dark-1)] text-white">
+    <div class="max-w-7xl mx-auto">
+        <div class="max-w-4xl mx-auto text-center mb-16">
+            <p class="text-sm font-semibold tracking-widest text-[var(--accent)] mb-2" data-aos="fade-up">
+                LEADERSHIP
+            </p>
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-white" data-aos="fade-up" data-aos-delay="100">
+                Meet the Visionaries Behind Tonabolic
+            </h2>
+        </div>
+
+        <div class="space-y-24">
+            
+            <!-- CO-FOUNDER 1: Image Left, Text Right -->
+              <div class="grid md:grid-cols-3 gap-12 items-center p-8 bg-[var(--dark-4)] rounded-2xl shadow-xl" data-aos="fade-up">
+                
+                <!-- Image Container (1/3 Width on Desktop) -->
+                <div class="md:col-span-1">
+                    <img 
+                        src="assets/ashrita/ashrita.png" 
+                        alt="Profile of Founder One" 
+                        class="w-full aspect-square object-cover rounded-xl shadow-lg border-4 border-[var(--accent)]/50 mx-auto"
+                    />
+                </div>
+                
+                <!-- Text Content (2/3 Width on Desktop) -->
+                <div class="md:col-span-2">
+                    <h3 class="text-3xl font-extrabold text-[var(--accent)] mb-1">
+                        Ashrita Datta
+                    </h3>
+                    <p class="text-xl font-semibold text-white mb-6">
+                        Fitness Entrepreneur & Business Strategist
+                    </p>
+                    <p class="text-[var(--text-muted)] leading-relaxed mb-4">
+                       Ashrita is a Fitness Entrepreneur by passion and choice, with multiple fitness certifications added to her belt. She has built Tonabolic - which is a strong team, offering services of Customized Personal Fitness training, rehabilitation fitness programs and corporate wellness programs. Tonabolic is a team of 20+ Certified fitness professionals and has been able to serve more than 8000 individual clients over 8 years, and more than 15 corporate clients (Leading International banks, GAP, Infosys, Vodafone AP&T, Oracle, LifeCykul, RR Kabel, Pennywise Solutions and, more.). She has led various workshops, talks and training programs for corporate employees with a focus upon making ‘Movement for Life’. She has also contributed to workshops in the social sector as a trainer and consultant to ELMS Sports Foundation and Abhinav Bindra Foundation. She has also developed fitness, health and wellness related Podcasts on Spotify. Today, Ashrita co-heads another Fitness Entrepreneurial company, ‘The Fitness Company’ which operates FSSA AP & Telangana authorized center, which imparts high quality and research-based education, in the field of fitness and sports sciences.
+                    </p>
+                    <p class="text-[var(--text-muted)] leading-relaxed">
+                       An alumni of GE Capital, SBI Credit Card and Vodafone and with 15 years of past experience at championing business processes and steering large business teams in the corporate world with NBFC and Telecom Giants - business development strategy, Service excellence, Client life-cycle management - are mastered skill sets for her. Additionally, she contributes to select and high-profile engagements in the areas of business development, growth and scaling strategy and, client management for Music Director and Oscar Awardee, Mr. MM Keeravaani.
+                    </p>
+                </div>
+            </div>
+
+
+            
+
+            <!-- CO-FOUNDER 2: Image Right, Text Left (Reverse Layout) -->
+            <div class="grid md:grid-cols-3 gap-12 items-center p-8 bg-[var(--dark-4)] rounded-2xl shadow-xl" data-aos="fade-up" data-aos-delay="200">
+                
+                <!-- Image Container (1/3 Width on Desktop - Order 2) -->
+             <div class="md:col-span-1 order-1 md:order-2 flex flex-col items-center justify-start">
+                <img 
+                    src="assets/kaustubh/kaustubh.png" 
+                    alt="Profile of Founder Two" 
+                    class="w-full aspect-square object-cover rounded-xl shadow-lg border-4 border-[var(--accent)]/50"
+                />
+            </div>
+                
+                <!-- Text Content (2/3 Width on Desktop - Order 1) -->
+           <div class="md:col-span-2 order-2 md:order-1">
+                  <h3 class="text-3xl font-extrabold text-[var(--accent)] mb-1">
+                      Dr. Kaustubh Mulay
+                  </h3>
+                  <p class="text-xl font-semibold text-white mb-6">
+                       Learning & Devleopment Head
+                  </p>
+                  <p class="text-[var(--text-muted)] leading-relaxed mb-4">
+                    Dr. Kaustubh Mulay is a trained and practicing Ophthalmic Pathologist. He holds a Bachelor's degree in Medicine from the Shivaji University. He later pursued Masters in Pathology (D.N.B. Pathology) and thereafter specialized, first in Oncopathology and later in Ophthalmic Pathology. Dr. Mulay has extensively contributed towards literature and research, by virtue of publishing is several National and International peer-reviewed journals. He has also authored chapters in Books on Ocular Oncology, including the prestigious WHO blue book on Tumors of the Eye. Some of the major awards and honours to his credit include the Dr. Gangadhar Sundar Gold medal at OPAI, Dr. SC Dutta award at AIOS, G.Subbalaxmi Gold medal for young scientist.
+
+ 
+
+                  </p>
+                  <p class="text-[var(--text-muted)] leading-relaxed">
+                   
+                    In his spare time, Dr. Mulay enjoys cycling, running and swimming. He is triathlete and has raced his way to the finish line at 6, 70.3 Ironman events in Asia and Europe. 
+                    
+                     <br>
+                    
+                    In addition, he is a certified Strength & Conditioning coach, a certified Mobility expert and a certified Animal Flow instructor. 
+                    
+                     <br>
+                    
+                    Dr. Mulay likes to blend the realms of medicine, sports, strength training and rehabilitation to provide Prehab(preventative rehabilitation) and Rehab, to his clients. Additionally, he co-heads another Fitness Entrepreneurial company, ‘The Fitness Company’ which operates ‘FSSA AP & Telangana authorized center’. FSSA imparts high quality and research-based education, in the field of fitness and sports sciences.
+                    
+                     <br>
+                    
+                    Dr. Mulay believes that bodily problems are often addressed after they become an issue and that is far often, too late - a reactionary approach. He believes the key to improved health care is education and awareness. This proactive-prehab-approach can mitigate the risk of injuries and pain in the first place. He is a huge proponent of movement education. 
+                                      </p>
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-12 items-center p-8 bg-[var(--dark-4)] rounded-2xl shadow-xl" data-aos="fade-up">
+                
+                <!-- Image Container (1/3 Width on Desktop) -->
+                <div class="md:col-span-1">
+                    <img  
+                        src="assets/sunny/sunny.png" 
+                        alt="Profile of Founder One" 
+                        class="w-full aspect-square object-cover rounded-xl shadow-lg border-4 border-[var(--accent)]/50 mx-auto"
+                    />
+                </div>
+                
+                <!-- Text Content (2/3 Width on Desktop) -->
+                <div class="md:col-span-2">
+                  <h3 class="text-3xl font-extrabold text-[var(--accent)] mb-1">
+                      Sunny Arora
+                  </h3>
+                  <p class="text-xl font-semibold text-white mb-6">
+                      Health and Nutrition Coach
+                  </p>
+                  <p class="text-[var(--text-muted)] leading-relaxed mb-4">
+                      Sunny Arora is a Health and Nutrition Coach who helps people turn their training into visible results on the scale and in the mirror. He specialises in weight loss and inch loss around the midsection and hips, while protecting energy, muscle and performance for people who already train or want to start training seriously.
+
+                  </p>
+                  <p class="text-[var(--text-muted)] leading-relaxed mb-4">
+
+Sunny’s approach combines smart nutrition, meal timing and recovery with the work clients do on the gym floor. He focuses on stabilising energy for stronger workouts, supporting gut and liver health so the body can actually burn fat, and designing routines that reduce inflammation instead of adding more stress. By aligning food, sleep and stress management with the training plan, he helps clients drop inches, maintain or build lean muscle, and feel stronger and more confident rep after rep.
+                  </p>
+                  <p class="text-[var(--text-muted)] leading-relaxed">
+                     <strong>Certifications : </strong> Certified Health Coach (USA) and Certified Functional Nutrition Coach (Centre for Nutrition and Dietetics Studies).
+                  </p>
+              </div>
+            </div>
+
+
+            <div class="grid md:grid-cols-3 gap-12 items-center p-8 bg-[var(--dark-4)] rounded-2xl shadow-xl" data-aos="fade-up" data-aos-delay="200">
+                
+                <!-- Image Container (1/3 Width on Desktop - Order 2) -->
+             <div class="md:col-span-1 order-1 md:order-2 flex flex-col items-center justify-start">
+                <img 
+                    src="assets/preeti/preeti-profile.png" 
+                    alt="Profile of Founder Two" 
+                    class="w-full aspect-square object-cover rounded-xl shadow-lg border-4 border-[var(--accent)]/50"
+                />
+            </div>
+                
+                <!-- Text Content (2/3 Width on Desktop - Order 1) -->
+           <div class="md:col-span-2 order-2 md:order-1">
+                  <h3 class="text-3xl font-extrabold text-[var(--accent)] mb-1">
+                      Preeti Kolariya
+                  </h3>
+                  <p class="text-xl font-semibold text-white mb-6">
+                       Head of Operations
+                  </p>
+                  <p class="text-[var(--text-muted)] leading-relaxed mb-4">
+                      Preeti brings a powerful combination of financial expertise and operational management essential for scalable growth. With over two years of rigorous accounting experience supporting a Chartered Accountant firm, she ensures that all client engagements, financial reporting, and compliance frameworks are executed with accuracy and diligence.
+                  </p>
+                  <p class="text-[var(--text-muted)] leading-relaxed">
+                     In her capacity as Head of Operations, Preeti leverages an additional six months of dedicated management experience to oversee operational workflows, drive cross-functional efficiency, and optimize the day-to-day business functions. Her dual background ensures strategic decisions are grounded in financial reality, allowing Tonabolic to maintain stability while rapidly scaling its multi-coach led training model and market reach.
+                  </p>
+              </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<section id="coaches-gallery" class="py-24 px-6 bg-[var(--dark-1)] text-white">
+    <div class="max-w-7xl mx-auto">
+        
+        <div class="max-w-4xl mx-auto text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-white" data-aos="fade-up">
+                Team Tonabolic 
+            </h2>
+            <div class="w-24 h-1 bg-[var(--accent)] mx-auto rounded-full" data-aos="zoom-in" data-aos-delay="200"></div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            
+            <div class="group relative overflow-hidden rounded-2xl aspect-[3/4] shadow-2xl border-2 border-white/5" data-aos="fade-up" data-aos-duration="1000">
+                <img 
+                    src="assets/coache-images/coach-1.jpg" 
+                    alt="Coach Prakhar" 
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
+                    <h4 class="text-xl font-bold text-white tracking-wide">
+                        Coach Prakhar
+                    </h4>
+                </div>
+            </div>
+            
+             <div class="group relative overflow-hidden rounded-2xl aspect-[3/4] shadow-2xl border-2 border-white/5" data-aos="fade-up" data-aos-duration="1000">
+                <img 
+                    src="assets/coache-images/rajesh.png" 
+                    alt="Coach Prakhar" 
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
+                    <h4 class="text-xl font-bold text-white tracking-wide">
+                        Coach Rajesh
+                    </h4>
+                </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-2xl aspect-[3/4] shadow-2xl border-2 border-white/5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                <img 
+                    src="assets/coache-images/coach-2.png" 
+                    alt="Coach Abdullah" 
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
+                    <h4 class="text-xl font-bold text-white tracking-wide">
+                        Coach Abdullah
+                    </h4>
+                </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-2xl aspect-[3/4] shadow-2xl border-2 border-white/5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                <img 
+                    src="assets/coache-images/coach-3.png" 
+                    alt="Coach Aman" 
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
+                    <h4 class="text-xl font-bold text-white tracking-wide">
+                        Coach Aman
+                    </h4>
+                </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-2xl aspect-[3/4] shadow-2xl border-2 border-white/5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                <img 
+                    src="assets/coache-images/coach-4.png" 
+                    alt="Coach Rajesh" 
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
+                    <h4 class="text-xl font-bold text-white tracking-wide">
+                        Coach Baqar
+                    </h4>
+                </div>
+            </div>
+            
+             <div class="group relative overflow-hidden rounded-2xl aspect-[3/4] shadow-2xl border-2 border-white/5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                <img 
+                    src="assets/coache-images/unnamed.jpg" 
+                    alt="Coach Rajesh" 
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
+                    <h4 class="text-xl font-bold text-white tracking-wide">
+                        Coach Bobby
+                    </h4>
+                </div>
+            </div>
+            
+             <div class="group relative overflow-hidden rounded-2xl aspect-[3/4] shadow-2xl border-2 border-white/5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                <img 
+                    src="assets/coache-images/unnamed2.png" 
+                    alt="Coach Rajesh" 
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
+                    <h4 class="text-xl font-bold text-white tracking-wide">
+                        Coach Rokopelo
+                    </h4>
+                </div>
+            </div>
+            
+             <div class="group relative overflow-hidden rounded-2xl aspect-[3/4] shadow-2xl border-2 border-white/5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                <img 
+                    src="assets/coache-images/unnamed3.png" 
+                    alt="Coach Rajesh" 
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
+                    <h4 class="text-xl font-bold text-white tracking-wide">
+                        Coach Kiran
+                    </h4>
+                </div>
+            </div>
+            
+             <div class="group relative overflow-hidden rounded-2xl aspect-[3/4] shadow-2xl border-2 border-white/5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                <img 
+                    src="assets/coache-images/unnamed4.png" 
+                    alt="Coach Rajesh" 
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
+                    <h4 class="text-xl font-bold text-white tracking-wide">
+                        Coach Soumyadip 
+                    </h4>
+                </div>
+            </div>
+            
+             <div class="group relative overflow-hidden rounded-2xl aspect-[3/4] shadow-2xl border-2 border-white/5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                <img 
+                    src="assets/coache-images/vishal.png" 
+                    alt="Coach Rajesh" 
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
+                    <h4 class="text-xl font-bold text-white tracking-wide">
+                        Coach Vishal
+                    </h4>
+                </div>
+            </div>
+            
+             <div class="group relative overflow-hidden rounded-2xl aspect-[3/4] shadow-2xl border-2 border-white/5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                <img 
+                    src="assets/coache-images/vaishnav.png" 
+                    alt="Coach Rajesh" 
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
+                    <h4 class="text-xl font-bold text-white tracking-wide">
+                        Coach Vaishnav
+                    </h4>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+  
+  <section id="tonabolic-socials" class="py-24 px-6 bg-[var(--dark-2)] text-white">
+
+      <div class="max-w-7xl mx-auto">
+          <div class="max-w-4xl mx-auto text-center mb-16">
+              <p class="text-sm font-semibold tracking-widest text-[var(--accent)] mb-2" data-aos="fade-up">
+                  OUR VOICE & VISION
+              </p>
+              <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-white" data-aos="fade-up" data-aos-delay="100">
+                  Insights, Podcasts, and Features
+              </h2>
+          </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+          <div class="bg-[var(--dark-4)] rounded-xl shadow-2xl overflow-hidden flex flex-col" data-aos="fade-up" data-aos-delay="200">
+              
+              <div class="aspect-video w-full"> 
+                  <iframe 
+                      width="100%" 
+                      height="100%" 
+                      src="https://www.youtube-nocookie.com/embed/L1mT54h-VUs" 
+                      title="What Makes Tonabolic Different" 
+                      frameborder="0" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                      allowfullscreen
+                      class="w-full h-full"
+                  ></iframe>
+              </div>
+
+              <div class="p-6 flex-grow">
+                  <h3 class="text-xl font-bold mb-2 text-[var(--accent)]">
+                      YouTube: Video Insight
+                  </h3>
+                  <p class="text-white font-semibold mb-2">
+                      What Makes Tonabolic Different than other gyms OR fitness studios?
+                  </p>
+                  <p class="text-[var(--text-muted)] text-sm">
+                      In this video, we detail our unique Specialized multi coach led training model and how it brings specialized, celebrity-level training directly to your home or society gym.
+                  </p>
+                  <a href="http://www.youtube.com/watch?v=L1mT54h-VUs" target="_blank" class="mt-4 inline-block text-[var(--accent)] hover:text-white transition duration-300 text-sm font-semibold">
+                      Watch on YouTube <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i>
+                  </a>
+              </div>
+          </div>
+
+          <div class="bg-[var(--dark-4)] rounded-xl shadow-2xl overflow-hidden flex flex-col" data-aos="fade-up" data-aos-delay="300">
+              
+              <div class="w-full flex-shrink-0">
+                  <iframe 
+                      data-testid="embed-iframe" 
+                      style="border-radius:12px" 
+                      src="https://open.spotify.com/embed/show/1uVPtnoKTNAVCAueLCK00m?utm_source=generator" 
+                      width="100%" 
+                      height="352" 
+                      frameBorder="0" 
+                      allowfullscreen="" 
+                      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                      loading="lazy">
+                  </iframe>
+              </div>
+
+              <div class="p-6 flex-grow">
+                  <h3 class="text-xl font-bold mb-2 text-[var(--accent)]">
+                      Podcast: Latest Episode
+                  </h3>
+                  <p class="text-white font-semibold mb-2">
+                      Target Train Transform With Ashrita
+                  </p>
+                  <p class="text-[var(--text-muted)] text-sm">
+                      Tune in as we discuss integrating strength, mobility, and sustainable habits for functional longevity. Essential listening for every client.
+                  </p>
+                  <a href="https://open.spotify.com/show/1uVPtnoKTNAVCAueLCK00m?si=keoK-i9XQf6gROo4dVlRnA&nd=1&dlsi=4bb1d342a9634ce3" target="_blank" class="mt-4 inline-block text-[var(--accent)] hover:text-white transition duration-300 text-sm font-semibold">
+                      Listen on Spotify <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i>
+                  </a>
+              </div>
+          </div>
+
+          <div class="bg-[var(--dark-4)] rounded-xl shadow-2xl overflow-hidden flex flex-col" data-aos="fade-up" data-aos-delay="400">
+              
+    <img src="assets/featured/Business_outreach.png" alt="Featured article from Business Outreach about Tonabolic" class="w-full h-48 object-cover" />
+
+              <div class="p-6 flex-grow flex flex-col justify-between">
+                  <div>
+                      <h3 class="text-xl font-bold mb-2 text-white">
+                          Featured: Business Outreach
+                      </h3>
+                      <p class="text-[var(--accent)] font-semibold mb-3 text-lg">
+                          Tonabolic - The Group of Passionate Certified Fitness coaches...
+                      </p>
+                      <p class="text-[var(--text-muted)] leading-relaxed text-sm mb-4">
+                          Snippet: The article profiles our team's commitment to safety, certification, and making personalized, results-driven coaching accessible at your doorstep.
+                      </p>
+                  </div>
+
+                  <a href="https://www.businessoutreach.in/tonabolic-the-group-of-passionate-certified-fitness-coaches/" target="_blank" class="mt-4 inline-block bg-[var(--accent)] text-black font-bold py-3 px-6 rounded-lg text-center hover:bg-yellow-500 transition duration-300">
+                      Read the Full Feature <i class="fa-solid fa-newspaper ml-2"></i>
+                  </a>
+              </div>
+          </div>
+
+      </div>
+
+  </section>
+
+<section id="tonabolic-difference" class="py-24 px-6 bg-[var(--dark-2)] text-white">
+
+    <div class="max-w-7xl mx-auto">
+        <div class="max-w-4xl mx-auto text-center mb-16">
+            <p class="text-sm font-semibold tracking-widest text-[var(--accent)] mb-2" data-aos="fade-up">
+                OUR UNIQUE MODEL
+            </p>
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-white" data-aos="fade-up" data-aos-delay="100">
+                The Science and Structure of Tonabolic
+            </h2>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-3 gap-12">
+
+        <aside
+            class="lg:col-span-1 p-8 bg-[var(--dark-4)] rounded-xl shadow-2xl
+                  h-fit lg:sticky lg:top-32 lg:max-h-[85vh] lg:overflow-y-auto"
+            data-aos="fade-right"
+            data-aos-delay="300"
+        >
+            <h3 class="text-3xl font-extrabold mb-6 text-[var(--accent)] border-b border-[var(--accent)]/50 pb-3">
+                What makes Tonabolic different?
+            </h3>
+
+            <ul class="space-y-4 text-lg font-medium">
+                <li class="flex items-start gap-3">
+                    <i class="fas fa-bullseye text-green-500 mt-1"></i>
+                    <span>Customized personal training based on thorough assessments</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <i class="fas fa-users-gear text-green-500 mt-1"></i>
+                    <span>Specialized multi coach led training model</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <i class="fas fa-home text-green-500 mt-1"></i>
+                    <span>Convenient sessions at home or society gym</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <i class="fas fa-shield-halved text-green-500 mt-1"></i>
+                    <span>Science-backed, structured, injury-free routines
+</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <i class="fas fa-utensils text-green-500 mt-1"></i>
+                    <span>Nutrition programs emphasizing sustainable lifestyle changes guided by the body
+</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <i class="fas fa-child text-green-500 mt-1"></i>
+                    <span>Adaptable training for all ages (8 to 88) and fitness levels, with modifications for injury history</span>
+                </li>
+            </ul>
+        </aside>
+
+        <div class="lg:col-span-2 space-y-4">
+
+            <details class="bg-[var(--accent)] p-6 rounded-xl shadow-2xl" data-aos="fade-up" data-aos-delay="400">
+                <summary class="flex justify-between items-center cursor-pointer list-none">
+                    <h3 class="text-xl md:text-2xl font-bold text-white/90 pr-4">
+                        What is the core philosophy or belief that Tonabolic was built on?
+                    </h3>
+                    <i class="fas fa-plus-circle text-white/90 transition-transform duration-300 transform details-plus-icon"></i>
+                </summary>
+                <div class="pt-4 text-black/80 border-t border-white/50 mt-4">
+                    <p class="text-black/80 leading-relaxed mb-4">
+                        Tonabolic was built on the core philosophy of <strong>purpose-driven, certified instructor-led exercise sessions</strong> that prioritize <strong>movement, body awareness, and physical literacy</strong> over pre-recorded workouts.
+                    </p>
+                    
+                    <p class="text-black/80 font-bold mb-2">Key Principles</p>
+                    <p class="text-black/80 leading-relaxed mb-4">
+                        This approach emphasizes inclusive programs from kids to adults and seniors, focusing on <strong>functional strength, mobility, joint health, and corrective exercises</strong> over mere heavy lifting. Services like Functional Range Conditioning, rehabilitation training, and playful movement for children promote lifelong activity through science-backed, personalized methods tailored to home or society gyms, where consistency is assured.
+                    </p>
+                    
+                    <p class="text-black/80 font-bold mb-2">Addressing Indian Fitness Gaps</p>
+                    <p class="text-black/80 leading-relaxed">
+                        Tonabolic tackles barriers such as gym intimidation and crowded timings by offering flexible sessions in convenient locations, like homes and society gyms. Nutrition consulting and holistic elements like yoga and mobility sessions target everyday wellbeing, energy, and injury prevention, aligning with functional fitness for real-life benefits.
+                    </p>
+                </div>
+            </details>
+
+            <details class="bg-[var(--accent)] p-6 rounded-xl shadow-2xl" data-aos="fade-up" data-aos-delay="500">
+                <summary class="flex justify-between items-center cursor-pointer list-none">
+                    <h3 class="text-xl md:text-2xl font-bold text-white/90 pr-4">
+                       
+What problem in the fitness industry are we solving?
+                    </h3>
+                    <i class="fas fa-plus-circle text-white/90 transition-transform duration-300 transform details-plus-icon"></i>
+                </summary>
+                <div class="pt-4 text-black/80 border-t border-white/50 mt-4">
+                    <p class="text-black/80 leading-relaxed mb-2">
+                        Tonabolic tackles some of the biggest gaps in the Indian fitness industry by creating a fitness ecosystem that is <strong>scientific, accessible, inclusive, and results-driven.</strong>
+                    </p>
+
+                    <ol class="list-decimal list-inside text-black/80 leading-relaxed mb-4 ml-4 space-y-3">
+                        <li>
+                            <strong>Inconsistency and lack of motivation</strong><br>
+                            Most people want to work out but struggle to show up consistently—gyms feel far, intimidating, or inconvenient. Tonabolic solves this by delivering structured fitness sessions directly to society gyms or home gyms with flexible timings, making fitness easy to stick to.
+                        </li>
+                        <li>
+                            <strong>Intimidating, negative gym environments</strong><br>
+                            Crowded commercial gyms often cause anxiety and body shaming, especially for women. Tonabolic provides a comfortable, <strong>judgment-free space</strong> with supportive coaches who personalize workouts based on each individual’s capacity and progression.
+                        </li>
+                        <li>
+                            <strong>Poor customization and lack of scientific programming</strong><br>
+                            Many fitness programs ignore progressive overload, biomechanics, and individual limitations. Tonabolic designs <strong>science-backed programs</strong> tailored to each participant—from beginners with knee or back pain to advanced trainees—ensuring safe, sustainable progress.
+                        </li>
+                        <li>
+                            <strong>Safety concerns for seniors</strong><br>
+                            Older adults often fear injury and need specialized programming. Tonabolic prioritizes <strong>joint mobility, balance, functional strength</strong>, and gradual progression to improve quality of life without risk.
+                        </li>
+                        <li>
+                            <strong>Misaligned fitness goals</strong><br>
+                            Most people want better mobility, lean muscle, endurance, and functional fitness—not extreme bodybuilding. Tonabolic realigns short- and long-term goals through detailed assessments and training that builds fundamental movement before heavy lifting is introduced.
+                        </li>
+                        <li>
+                            <strong>Myths around children’s fitness</strong><br>
+                            Kids are often exposed to inappropriate strength training. Tonabolic offers age-appropriate programs (starting at 8 years old) that develop <strong>coordination, balance, agility, reaction time</strong>, and correct movement patterns through play-based training.
+                        </li>
+                        <li>
+                            <strong>The ‘one-trainer-does-everything’ problem</strong><br>
+                            No single trainer can master strength, mobility, agility, flexibility, endurance, and injury prevention. Tonabolic uses a <strong>team-based coaching model</strong> with 2–3 specialized coaches per program, guided by strong operations and training leadership.
+                        </li>
+                        <li>
+                            <strong>Disruption due to coach unavailability</strong><br>
+                            In traditional personal training, if the trainer is unavailable, progress stops. Tonabolic ensures <strong>continuity</strong>—another trained coach from the team steps in seamlessly, maintaining momentum and consistent monitoring.
+                        </li>
+                    </ol>
+                    <p class="text-black/80 leading-relaxed mt-4">
+                        <strong>In short</strong><br>
+                        Tonabolic solves the core issues of a fragmented, nascent fitness market by offering <strong>structured, science-driven, inclusive, multi-specialist fitness programs</strong> that adapt to different bodies, ages, and goals—making fitness sustainable for everyone.
+                    </p>
+                </div>
+            </details>
+
+            <details class="bg-[var(--accent)] p-6 rounded-xl shadow-2xl" data-aos="fade-up" data-aos-delay="600">
+                <summary class="flex justify-between items-center cursor-pointer list-none">
+                    <h3 class="text-xl md:text-2xl font-bold text-white/90 pr-4">
+                        How does Tonabolic define personalized fitness?
+                    </h3>
+                    <i class="fas fa-plus-circle text-white/90 transition-transform duration-300 transform details-plus-icon"></i>
+                </summary>
+                <div class="pt-4 text-black/80 border-t border-white/50 mt-4">
+                    <p class="text-black/80 leading-relaxed mb-4">
+                        At Tonabolic, <strong>personalized fitness means designing training that fits the person</strong>—not forcing a person into a generic program. We create science-backed, progressively structured workouts that adapt to each individual’s fitness level, physical limitations, and goals, ensuring safe, sustainable, and meaningful results.
+                    </p>
+                    
+                    <p class="text-black/80 font-bold mb-2">What personalization means at Tonabolic</p>
+                    <ol class="list-decimal list-inside text-black/80 leading-relaxed mb-4 ml-4 space-y-3">
+                        <li>
+                            <strong>Deep fitness assessments & goal alignment</strong><br>
+                            We begin with comprehensive assessments to understand mobility, strength, limitations, and lifestyle. This helps us set <strong>realistic short-term and long-term goals</strong> that align with the client’s aspirations and current abilities.
+                        </li>
+                        <li>
+                            <strong>Multi-coach expertise for holistic training</strong><br>
+                            Personalization is not a one-trainer job. Tonabolic uses a <strong>team-based system</strong> where each coach specializes in areas like: mobility & flexibility, strength & hypertrophy, endurance & conditioning, balance & corrective exercise. This ensures that every client receives the right expertise at the right time.
+                        </li>
+                        <li>
+                            <strong>Safe, progressive, and science-backed programming</strong><br>
+                            Workouts are built with progressive overload, functional training principles, and injury prevention. Programs adjust to individual needs, including: beginner-level mobility constraints, shoulder, knee or back pain, joint instability, post-rehabilitation requirements. Safety and long-term well-being come first.
+                        </li>
+                        <li>
+                            <strong>Flexibility that fits real life</strong><br>
+                            Personalization includes <strong>where</strong> and <strong>when</strong> you train. Tonabolic offers sessions in home gyms, society gyms, or convenient community spaces—removing barriers that stop people from showing up.
+                        </li>
+                        <li>
+                            <strong>Age-specific fitness design</strong><br>
+                            Every age group needs a different approach. <strong>Children:</strong> play-based training that develops coordination, agility, rhythm, and foundational movement patterns. <strong>Adults:</strong> strength, mobility, endurance, and functional fitness for everyday performance. <strong>Seniors:</strong> joint mobility, balance, fall prevention, and gentle strength building.
+                        </li>
+                    </ol>
+                    <p class="text-black/80 leading-relaxed mb-4">
+                        <strong>Tonabolic’s definition in one line:</strong><br>
+                        Personalized fitness at Tonabolic is a multidimensional, science-driven, client-centric experience that evolves with your body, goals, and lifestyle.
+                    </p>
+                </div>
+            </details>
+
+            <details class="bg-[var(--accent)] p-6 rounded-xl shadow-2xl" data-aos="fade-up" data-aos-delay="700">
+                <summary class="flex justify-between items-center cursor-pointer list-none">
+                    <h3 class="text-xl md:text-2xl font-bold text-white/90 pr-4">
+                        What is the role of the “team of coaches” in your model?
+                    </h3>
+                    <i class="fas fa-plus-circle text-white/90 transition-transform duration-300 transform details-plus-icon"></i>
+                </summary>
+                <div class="pt-4 text-black/80 border-t border-white/50 mt-4">
+                    <p class="text-black/80 leading-relaxed mb-4">
+                        At Tonabolic, the <strong>team of coaches</strong> is the core of our training system. Instead of relying on a single trainer to do everything, we use a <strong>multi-specialist, coordinated coaching team</strong> to deliver a truly personalized, science-backed fitness experience. This model ensures that every client benefits from multiple areas of expertise, seamless continuity, and consistent progress—no matter their age, goals, or limitations.
+                    </p>
+                    
+                    <ol class="list-decimal list-inside text-black/80 leading-relaxed mb-4 ml-4 space-y-3">
+                        <li>
+                            <strong>Collaborative program design</strong><br>
+                            Our coaches co-create each training program using a unified scientific methodology. This ensures that every workout reflects: the client’s assessment data, their short-term & long-term goals, mobility, strength, and conditioning needs, and any injuries, limitations, or lifestyle constraints. It removes guesswork and guarantees structured progression.
+                        </li>
+                        <li>
+                            <strong>Specialized expertise integrated into one program</strong><br>
+                            Each coach brings a niche skill set, such as: strength & conditioning, mobility & flexibility, functional training, corrective exercise & injury prevention, athletic conditioning, and mental discipline and motivation. Clients benefit from <strong>multiple specialists, not one generalist.</strong>
+                        </li>
+                        <li>
+                            <strong>Continuity of training (no disruptions)</strong><br>
+                            If one coach is on leave or unavailable, another team member steps in seamlessly. This ensures: <strong>no breaks in training, no loss of progress, consistent instruction, and long-term accountability.</strong> This solves one of the biggest problems in traditional personal training.
+                        </li>
+                        <li>
+                            <strong>Constant learning and quality control</strong><br>
+                            The team model allows: ongoing upskilling, peer reviews, adherence to standardized training protocols, and integration of new research. This keeps program quality high across all coaches and locations.
+                        </li>
+                    </ol>
+                    <p class="text-black/80 leading-relaxed">
+                        <strong>In essence</strong><br>
+                        The team of coaches at Tonabolic ensures <strong>depth, continuity, specialization, and scientific precision</strong>—delivering a fitness experience far more comprehensive than what a single trainer can offer.
+                    </p>
+                </div>
+            </details>
+
+            <details class="bg-[var(--accent)] p-6 rounded-xl shadow-2xl" data-aos="fade-up" data-aos-delay="800">
+                <summary class="flex justify-between items-center cursor-pointer list-none">
+                    <h3 class="text-xl md:text-2xl font-bold text-white/90 pr-4">
+                        How does Tonabolic ensure safety, injury-prevention, and sustainable progress?
+                    </h3>
+                    <i class="fas fa-plus-circle text-white/90 transition-transform duration-300 transform details-plus-icon"></i>
+                </summary>
+                <div class="pt-4 text-black/80 border-t border-white/50 mt-4">
+                    <p class="text-black/80 leading-relaxed mb-4">
+                        Tonabolic ensures safety and long-term progress through a <strong>science-driven, assessment-based, and coach-coordinated training system</strong> designed to meet people where they are and help them advance without risk.
+                    </p>
+                    
+                    <ol class="list-decimal list-inside text-black/80 leading-relaxed mb-4 ml-4 space-y-3">
+                        <li>
+                            <strong>Assessment-Driven Personalization</strong><br>
+                            Before starting, every client undergoes a detailed fitness assessment covering: mobility & joint health, strength imbalances, movement patterns, and injury history or current pain. This allows coaches to design programs that match an individual’s capacity rather than forcing them into generic or unsafe routines.
+                        </li>
+                        <li>
+                            <strong>Correct Form and Biomechanically-Safe Movement</strong><br>
+                            Every movement is taught with proper technique and regression/progression options. Coaches focus on: posture and alignment, joint stability, safe movement mechanics, and avoiding compensation patterns. This minimizes risk and builds a solid foundation.
+                        </li>
+                        <li>
+                            <strong>Gradual & Scientific Progression</strong><br>
+                            Tonabolic programs follow structured progression principles: gradual load increase, volume and intensity modulation, recovery-focused scheduling, and adaptation to fatigue levels. This ensures the body strengthens safely without overexertion or burnout.
+                        </li>
+                        <li>
+                            <strong>Real-Time Monitoring & Modifications</strong><br>
+                            Coaches continuously observe performance, discomfort, and mobility changes during sessions. Programs are adjusted quickly in response to: pain, fatigue, stiffness, flare-ups, and lifestyle changes. This adaptability prevents small issues from becoming injuries.
+                        </li>
+                        <li>
+                            <strong>Warm-Up, Cool-Down & Recovery Protocols</strong><br>
+                            Every session includes: dynamic warm-ups for joint prep, mobility drills for movement quality, cool-down and stretching, and breathwork or relaxation when needed. These reduce injury risk and improve recovery.
+                        </li>
+                        <li>
+                            <strong>Specialized Multi-Coach Expertise</strong><br>
+                            With 2–3 coaches overseeing each program, clients benefit from specialists in: mobility & flexibility, strength training, corrective exercise, and conditioning & endurance. This allows a more complete approach to safety and injury prevention than a single-trainer model.
+                        </li>
+                        <li>
+                            <strong>Safe Equipment Use & Controlled Environment</strong><br>
+                            Tonabolic ensures: safe equipment handling, controlled session environments (home/society gyms), and proper selection of weights and tools. All with a focus on minimizing risk while maximizing efficiency.
+                        </li>
+                        <li>
+                            <strong>Continuous Coach Education & Feedback Loops</strong><br>
+                            Coaches undergo ongoing training in: biomechanics, injury management, safe progression planning, and updated fitness science. Client feedback and team reviews ensure continuous refinement of the program.
+                        </li>
+                    </ol>
+                    <p class="text-black/80 leading-relaxed">
+                        <strong>In essence</strong><br>
+                        Tonabolic protects clients from injury and ensures long-lasting results by combining <strong>expert coaching, scientific progression, biomechanical correctness, and personalized adaptation</strong>—creating a safe, effective, and sustainable fitness journey.
+                    </p>
+                </div>
+            </details>
+
+            <details class="bg-[var(--accent)] p-6 rounded-xl shadow-2xl" data-aos="fade-up" data-aos-delay="700">
+                <summary class="flex justify-between items-center cursor-pointer list-none">
+                    <h3 class="text-xl md:text-2xl font-bold text-white/90 pr-4">
+                        What scientific principles or frameworks guide your nutrition programs?
+                    </h3>
+                    <i class="fas fa-plus-circle text-white/90 transition-transform duration-300 transform details-plus-icon"></i>
+                </summary>
+                <div class="pt-4 text-black/80 border-t border-white/50 mt-4">
+                    <p class="text-black/80 leading-relaxed mb-4">
+                        Tonabolic’s nutrition programs are guided by <strong>evidence-based nutritional science, behavior-change frameworks, and a “no quick fixes, no one-size-fits-all” philosophy.</strong> We focus on building sustainable eating habits that improve metabolic health, energy levels, body composition, and overall well-being. Our approach is rooted in <strong>long-term lifestyle change,</strong> not rigid diets or unrealistic restrictions.
+                    </p>
+                    
+                    <p class="text-black/80 font-bold mb-2">The Scientific Principles Behind Tonabolic Nutrition</p>
+                    <ol class="list-decimal list-inside text-black/80 leading-relaxed mb-4 ml-4 space-y-3">
+                        <li>
+                            <strong>Evidence-Based Personalization</strong><br>
+                            We design nutrition plans using validated principles from: Dietary Guidelines & Sports Nutrition Research, Metabolic health and energy balance science, Macronutrient and micronutrient optimization, and <strong>Bio-individuality</strong> (each body responds differently). Changes are aligned with your: health markers, preferences, lifestyle, training load, and digestion & hunger cues.
+                        </li>
+                        <li>
+                            <strong>Sustainable Energy Balance & Metabolic Health</strong><br>
+                            We focus on: creating relaxed calorie awareness (not obsession), balancing macronutrients for satiety, recovery, and performance, stabilizing blood sugar, improving metabolic flexibility, and supporting hormonal balance. No extreme deficits, crash diets, or metabolic stressors.
+                        </li>
+                        <li>
+                            </strong>Flexible Eating Patterns Over Restriction</strong><br>
+                            Guided by research on sustainable nutrition, we emphasize: balanced meals, flexible portioning, culturally relevant foods, adaptive frameworks like 80/20 eating, and mindful eating based on hunger/fullness cues. avoidance of fear-based diet culture. This helps you eat </strong>confidently, not anxiously.</strong>
+                        </li>
+                    </ol>
+                    
+                    <p class="text-black/80 font-bold mb-2">What You Receive</p>
+                    <ul class="list-disc list-inside text-black/80 leading-relaxed mb-4 ml-4">
+                        <li>Personalised meal guidance</li>
+                        <li>Flexible eating frameworks</li>
+                        <li>Weekly check-ins & habit tuning</li>
+                        <li>Education on how your body works</li>
+                        <li>Tools for sleep, stress, hydration & recovery</li>
+                        <li>Continuous support & accountability</li>
+                    </ul>
+                    
+                    <p class="text-black/80 leading-relaxed">
+                        <strong>Why it Matters</strong> <br>
+                        True transformation comes from <strong>consistent, sustainable habits</strong>—not temporary diets or extreme restrictions. Tonabolic helps you build a nutrition lifestyle that feels effortless, enjoyable, and aligned with your long-term health.
+                    </p>
+                </div>
+            </details>
+
+
+            <details class="bg-[var(--accent)] p-6 rounded-xl shadow-2xl" data-aos="fade-up" data-aos-delay="700">
+                <summary class="flex justify-between items-center cursor-pointer list-none">
+                    <h3 class="text-xl md:text-2xl font-bold text-white/90 pr-4">
+                        What makes your coaching team different—knowledge, certifications, culture, approach?
+                    </h3>
+                    <i class="fas fa-plus-circle text-white/90 transition-transform duration-300 transform details-plus-icon"></i>
+                </summary>
+                <div class="pt-4 text-black/80 border-t border-white/50 mt-4">
+                    <p class="text-black/80 leading-relaxed mb-4">
+                        Tonabolic’s coaching team is built on a blend of <strong>deep scientific expertise, rigorous certifications, continuous education, and a high-performance coaching culture.</strong> This combination ensures that every client receives safe, progressive, and truly personalized training.
+                    </p>
+                    
+                    <ol class="list-decimal list-inside text-black/80 leading-relaxed mb-4 ml-4 space-y-3">
+                        <li>
+                            <strong>Strong Knowledge & Multi-Domain Expertise</strong><br>
+                            Our coaches are trained across multiple pillars of human performance, including: anatomy & biomechanics, strength & conditioning, mobility & corrective exercise, sports science, and injury prevention & functional movement. This multi-specialist capability allows us to deliver <strong>complete, well-rounded fitness, not just workouts.</strong>
+                        </li>
+                        <li>
+                            <strong>Globally & Nationally Recognized Certifications</strong><br>
+                            Tonabolic coaches hold respected certifications from bodies such as: <strong>ACE</strong> (American Council on Exercise), <strong>NASM</strong> (National Academy of Sports Medicine), FSSA, K11 School of Fitness Sciences, ISST, RIA and BFY. These credentials ensure coaches are trained in evidence-based methodology—not guesswork.
+                        </li>
+                        <li>
+                            <strong>A Culture of Continuous Learning</strong><br>
+                            Tonabolic operates like a <strong>fitness university, not just a training company.</strong> We invest heavily in ongoing development through: weekly evidence-backed programming reviews, “Back to School” sessions for scientific upskilling, and internal workshops on mobility, coaching cues, and injury safety. This ensures clients benefit from <strong>current science, not outdated fitness trends.</strong>
+                        </li>
+                        <li>
+                            <strong>Team-Based Coaching Approach</strong><br>
+                            Unlike traditional models where one trainer handles everything, Tonabolic uses a <strong>multi-coach system.</strong> Each program is supported by 2–3 specialists, ensuring expertise across: mobility, strength, endurance, flexibility, and corrective movement. This brings better results, consistency, and continuity.
+                        </li>
+                        <li>
+                            <strong>A Client-Centric, Motivational Culture</strong><br>
+                            Our coaching culture is built on: high energy & encouragement, zero-judgment, inclusive environments, real-time form correction, supportive feedback loops, and personalized motivation strategies. Coaches meet clients where they are—whether that’s at a home gym, society gym, office, or open space—making fitness accessible and comfortable.
+                        </li>
+                        <li>
+                            <strong>Safety-First, Transformation-Oriented Approach</strong><br>
+                            We combine scientific programming with client reassurance: proper warm-up & cool-down protocols, technique-first training, progression at the right pace, and tracking mobility, pain points, and strength over time. This ensures transformation is <strong>safe, sustainable, and long-term.</strong>
+                        </li>
+                    </ol>
+                    <p class="text-black/80 leading-relaxed">
+                        <strong>In essence</strong><br>
+                        Tonabolic’s coaching team is different because it merges <strong>science, certifications, culture, and compassion</strong> into one powerful ecosystem—delivering fitness that’s not only effective, but also sustainable, inclusive, and deeply personalized.
+                    </p>
+                </div>
+            </details>
+            
+            
+                        <details class="bg-[var(--accent)] p-6 rounded-xl shadow-2xl" data-aos="fade-up" data-aos-delay="700">
+                <summary class="flex justify-between items-center cursor-pointer list-none">
+                    <h3 class="text-xl md:text-2xl font-bold text-white/90 pr-4">
+                        What kind of corporate tie ups or fitness events do you provide, and how do they align with your philosophy? 
+                    </h3>
+                    <i class="fas fa-plus-circle text-white/90 transition-transform duration-300 transform details-plus-icon"></i>
+                </summary>
+                <div class="pt-4 text-black/80 border-t border-white/50 mt-4">
+                    <p class="text-black/80 leading-relaxed mb-4">
+                      ‘Physical literacy’ forms the foundation of Tonabolic's holistic wellness programs by developing movement competence, confidence, and motivation through age-appropriate, play-integrated activities for adults. Corporate initiatives embed this via expert-led talks and interactive sessions on varied subjects of wellness, nutrition and fitness. The program overlooks a long-term agenda to ‘Build Internal Ambassadors’ to help sustain organizations, to foster a wellness culture.
+                      </p>
+                    
+
+                    <p class="text-black/80 leading-relaxed">
+                        <strong>We have partnered </strong><br>
+                       with companies like Infosys, Vodafone, GAP, Prokarma, ELMS Sports foundation, Cykul and more, to deliver structured group sessions.</p>
+                </div>
+            </details>
+        </div>
+    </div>
+
+</section>
+
+<section id="tonabolic-pillars" class="py-24 px-6 bg-[var(--dark-4)] text-white">
+    <div class="max-w-7xl mx-auto">
+        <div class="max-w-4xl mx-auto text-center mb-16">
+            <p class="text-sm font-semibold tracking-widest text-[var(--accent)] mb-2" data-aos="fade-up">
+                OUR PRINCIPLES
+            </p>
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-white" data-aos="fade-up" data-aos-delay="100">
+                Pillars of Sustainable Health
+            </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+            <div class="p-8 bg-[var(--dark-5)] rounded-xl shadow-xl transition-all duration-300 hover:shadow-[0_0_25px_rgba(249,195,73,0.2)]" data-aos="fade-up" data-aos-delay="300">
+                <i class="fas fa-book-open-reader text-[var(--accent)] text-4xl mb-4"></i>
+                <h3 class="text-2xl font-bold mb-3 text-white">Safety & Injury Prevention</h3>
+                
+                <p class="text-[var(--text-muted)] leading-relaxed">
+                    We ensure safety through <strong>proper exercise form instruction</strong>, gradual <strong>progression</strong>, and <strong>modification based on injury history</strong>. Our comprehensive system emphasizes biomechanical correctness, warm-ups, cool-downs, and continuous coach education to reduce risk.
+                </p>
+            </div>
+
+            <div class="p-8 bg-[var(--dark-5)] rounded-xl shadow-xl transition-all duration-300 hover:shadow-[0_0_25px_rgba(249,195,73,0.2)]" data-aos="fade-up" data-aos-delay="400">
+                <i class="fas fa-seedling text-[var(--accent)] text-4xl mb-4"></i>
+                <h3 class="text-2xl font-bold mb-3 text-white">Sustainable Nutrition Framework</h3>
+                
+                
+
+<!--[Image of a balanced, colorful meal with a focus on whole foods]-->
+
+
+                <p class="text-[var(--text-muted)] leading-relaxed">
+                    Our nutrition philosophy is: 'No quick fixes' or No 'one-size-fits-all' diets. We guide clients toward sustainable lifestyle changes and personalized meal guidance, focusing on <strong>evidence-based habit formation</strong> and <strong>balance over restriction</strong> for long-term health.
+                </p>
+            </div>
+
+            <div class="p-8 bg-[var(--dark-5)] rounded-xl shadow-xl transition-all duration-300 hover:shadow-[0_0_25px_rgba(249,195,73,0.2)]" data-aos="fade-up" data-aos-delay="500">
+                <i class="fas fa-check-double text-[var(--accent)] text-4xl mb-4"></i>
+                <h3 class="text-2xl font-bold mb-3 text-white">Accountability & Adherence</h3>
+                
+                
+
+<!--[Image of two people high-fiving in a supportive training environment]-->
+
+
+                <p class="text-[var(--text-muted)] leading-relaxed">
+                   We provide tools and guidance for <strong>stress management, sleep, and hydration</strong>. With continuous accountability and <strong>weekly check-ins</strong>, we ensure adherence, maintain momentum, and adapt plans as you grow, <strong>achieving true transformation</strong> through <strong>consistent, healthful habits</strong>.
+                </p>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+<section id="why-we-started" class="relative py-24 px-6 bg-cover bg-center bg-no-repeat text-white" 
+         style="background-image: linear-gradient(to bottom, rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.9)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop');">
+  
+  <div class="max-w-7xl mx-auto relative z-10">
+
+    <div class="max-w-4xl mx-auto text-center mb-16">
+      <p class="text-sm font-semibold tracking-widest text-[var(--accent)] mb-2" data-aos="fade-up">
+        OUR FOUNDATION
+      </p>
+
+      <h2 class="text-4xl md:text-5xl font-extrabold mb-8 text-white">
+        Why did we start Tonabolic?
+      </h2>
+
+      <p class="text-[var(--text-muted)] leading-relaxed text-lg mb-6" data-aos="fade-up" data-aos-delay="200">
+        The fitness industry is full of generic plans, extreme diets, and one-size-fits-all routines.
+      </p>
+
+      <p class="text-white leading-relaxed text-xl font-medium mb-6" data-aos="fade-up" data-aos-delay="300">
+        Tonabolic was created to bring credibility, structure, and personalization back into fitness.
+      </p>
+
+      <p class="text-[var(--text-muted)] leading-relaxed mb-8" data-aos="fade-up" data-aos-delay="400">
+        We wanted a system where people don't just ‘join a program’, instead they understand, learn, grow, and actually enjoy becoming fitter.
+      </p>
+
+      <div class="border-b-2 border-[var(--accent)]/50 pb-8 mb-10">
+        <p class="text-[var(--text-light)] leading-relaxed text-lg" data-aos="fade-up" data-aos-delay="500">
+          We created a space where every step you take brings real progress, where science meets heart, and where your transformation becomes the most fulfilling experience of your life.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <div class="relative overflow-hidden p-8 rounded-xl border border-[var(--accent)]/30 shadow-2xl group" data-aos="fade-up" data-aos-delay="700">
+         <div class="absolute inset-0 z-0 opacity-50 group-hover:opacity-60 transition-opacity duration-500 bg-cover bg-center" 
+             style="background-image: url('assets/ashrita/card-1.jpeg');"></div>
+        
+        <div class="relative z-10">
+          <i class="fas fa-bullseye text-[var(--accent)] text-4xl mb-4"></i>
+          <h3 class="text-2xl font-bold mb-4 text-[var(--accent)]">Our Mission</h3>
+          <p class="text-[var(--text-muted)]">
+            To empower individuals with personalized, science-based coaching and habit-building that transforms fitness into lasting strength, health, and confidence.
+          </p>
+        </div>
+      </div>
+
+      <div class="relative overflow-hidden p-8 rounded-xl border border-[var(--accent)]/30 shadow-2xl group" data-aos="fade-up" data-aos-delay="800">
+         <div class="absolute inset-0 z-0 opacity-50 group-hover:opacity-60 transition-opacity duration-500 bg-cover bg-center" 
+             style="background-image: url('assets/ashrita/card-2.jpeg');"></div>
+        
+        <div class="relative z-10">
+          <i class="fas fa-chart-line text-[var(--accent)] text-4xl mb-4"></i>
+          <h3 class="text-2xl font-bold mb-4 text-[var(--accent)]">Our Vision</h3>
+          <p class="text-[var(--text-muted)]">
+            To become India’s most trusted personalised fitness ecosystem — empowering individuals, building expert training communities, and making sustainable transformation the new standard.
+          </p>
+        </div>
+      </div>
+
+      <div class="relative overflow-hidden p-8 rounded-xl border border-[var(--accent)]/30 shadow-2xl group" data-aos="fade-up" data-aos-delay="900">
+        <div class="absolute inset-0 z-0 opacity-50 group-hover:opacity-60 transition-opacity duration-500 bg-cover bg-center" 
+             style="background-image: url('assets/ashrita/card-3.jpeg');"></div>
+        
+        <div class="relative z-10">
+          <i class="fas fa-handshake text-[var(--accent)] text-4xl mb-4"></i>
+          <h3 class="text-2xl font-bold mb-4 text-[var(--accent)]">Our Promise</h3>
+          <ul class="text-[var(--text-light)] space-y-2 list-none text-left">
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500"></i> Real coaches.</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500"></i> Real science.</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500"></i> Real results that stay.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="testimonials" class="py-24 px-6 bg-[var(--dark-1)] text-white overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+        
+        <div class="max-w-4xl mx-auto text-center mb-20">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-white" data-aos="fade-up">
+                Words from our Community
+            </h2>
+            <div class="w-24 h-1 bg-[var(--accent)] mx-auto rounded-full" data-aos="zoom-in" data-aos-delay="200"></div>
+        </div>
+
+        <div class="space-y-24">
+            
+            
+            
+             <div class="flex flex-col md:flex-row gap-12 items-start" data-aos="fade-up">
+                <div class="w-full md:w-1/3 lg:w-1/4 shrink-0">
+                    <div class="aspect-square rounded-xl overflow-hidden border-2 border-[var(--accent)] shadow-2xl">
+                        <img src="assets/testimonials/Rama-Rajamouli.webp" alt="Mrs. Rama Rajamouli" class="w-full h-full object-cover" />
+                    </div>
+                </div>
+                <div class="w-full md:w-2/3 lg:w-3/4">
+                    <div class="mb-6">
+                        <h4 class="text-2xl font-bold text-white mb-1">Mrs. Rama Rajamouli</h4>
+                        <p class="text-[var(--accent)] font-semibold uppercase tracking-wider text-sm">Indian Costume Designer and film stylist | Wife of Acclaimed Director Mr. SS Rajamouli</p>
+                    </div>
+                    <div class="relative">
+                        <span class="absolute -top-8 -left-6 text-6xl text-white/10 font-serif">“</span>
+                        <p class="text-gray-300 leading-relaxed text-lg whitespace-pre-line">
+                           Tonabolic is a very distinctive service.  Everything, from scheduling to training is smoothly organized. The trainers are extremely knowledgeable, friendly and motivating. They are always attentive to my pace and adjust the workouts according to my body and needs. Every session is planned with utmost precision and executed with great attention to safety. Highly recommend Tonabolic to anyone looking for personalized training. 
+The best part is they help you attain your goal without making you feel that you’re being pushed too much.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+                      <hr class="border-white/5" />
+                      
+                           <div class="flex flex-col md:flex-row-reverse gap-12 items-start" data-aos="fade-up">
+                <div class="w-full md:w-1/3 lg:w-1/4 shrink-0">
+                    <div class="aspect-square rounded-xl overflow-hidden border-2 border-[var(--accent)] shadow-2xl">
+                        <img src="assets/testimonials/ram-mohan.jpg" alt="Mr. Ram Mohan Maganti" class="w-full h-full object-cover" />
+                    </div>
+                </div>
+                <div class="w-full md:w-2/3 lg:w-3/4">
+                    <div class="mb-6">
+                        <h4 class="text-2xl font-bold text-white mb-1">Mr. Ram Mohan Maganti</h4>
+                        <p class="text-[var(--accent)] font-semibold uppercase tracking-wider text-sm">Co founder and Director, Jayabheri Group</p>
+                    </div>
+                    <div class="relative">
+                        <span class="absolute -top-8 -left-6 text-6xl text-white/10 font-serif">“</span>
+                        <p class="text-gray-300 leading-relaxed text-lg whitespace-pre-line">
+                            Hi, I’m a 57-year-old fitness enthusiast who joined Tonabolic about a year and a half ago. At the time, I was moderately fit but not particularly strong, and I was looking for a structured way to build real strength and improve my overall health. That’s when I was assigned to Dr Kaustubh for personal strength training, and it has been one of the best decisions I’ve made.
+
+                            Dr. Kaustubh is an exceptional trainer – patient, knowledgeable, and truly dedicated to his clients’ progress. He designs workouts that challenge me progressively, helping me build strength safely and effectively at my age. What sets him apart (and Tonabolic as a whole) is the holistic approach. Whenever I’ve dealt with sports injuries or nagging issues, Dr Kaustubh & his colleagues didn’t just work around them; they went the extra mile by connecting me with specialized expertise to address and overcome those problems. This level of care has kept me consistent and injury-free, allowing me to train with confidence.
+
+                            Tonabolic, led by the inspiring Ashrita Datta, is more than just a gym – it’s a wholesome fitness community that feels supportive, energetic, and genuinely invested in your transformation. The team of certified trainers creates an environment where everyone, regardless of age or starting point, can thrive. I’m not as strong as I’d like to be yet, but with Kaustubh’s guidance and the positive vibe of Tonabolic, I’m hopeful and excited about getting there.
+
+                            If you’re looking for a fitness group that combines expert training, personalized attention, and a fun, motivating atmosphere, I highly recommend Tonabolic. It’s changed my fitness journey for the better!
+
+                            Thank you, Ashrita, Kaustubh, and the entire Tonabolic team!
+                        </p>
+                    </div>
+                </div>
+            </div>
+                                    <hr class="border-white/5" /> 
+            
+          <div class="flex flex-col md:flex-row-reverse gap-12 items-start" data-aos="fade-up">
+                <div class="w-full md:w-1/3 lg:w-1/4 shrink-0">
+                    <div class="aspect-square rounded-xl overflow-hidden border-2 border-[var(--accent)] shadow-2xl">
+                        <img src="assets/testimonials/Manoj-Balakrishnan.jpg" alt="Mr. Ram Mohan Maganti" class="w-full h-full object-cover" />
+                    </div>
+                </div>
+                <div class="w-full md:w-2/3 lg:w-3/4">
+                    <div class="mb-6">
+                        <h4 class="text-2xl font-bold text-white mb-1">Mr. Manoj Balakrishnan</h4>
+                        <p class="text-[var(--accent)] font-semibold uppercase tracking-wider text-sm">VRVS INDIA </br> 
+Entrepreneur</p>
+                    </div>
+                    <div class="relative">
+                        <span class="absolute -top-8 -left-6 text-6xl text-white/10 font-serif">“</span>
+                        <p class="text-gray-300 leading-relaxed text-lg whitespace-pre-line">
+                           For over two years, Tonabolic has provided exemplary Yoga & Strength training services to our family. The program's tailored approach, with instructors effectively adapting exercises to our respective ages and physical capabilities, has yielded remarkable results.</br>
+
+At 81, my father has achieved significant improvements in strength, flexibility, and mobility, enhancing his quality of life. My wife aged about 45, got sustained energy and improved toning, while I attained the peak physical conditioning needed to successfully summit Mount Kilimanjaro on 4 October 2025—a profound personal milestone at 51 years of age.
+
+</br>Tonabolic exemplifies professionalism in fitness training. I highly recommend their services to individuals and families seeking transformative outcomes
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+
+            
+       
+
+            <hr class="border-white/5" />
+
+            <div class="flex flex-col md:flex-row gap-12 items-start" data-aos="fade-up">
+                <div class="w-full md:w-1/3 lg:w-1/4 shrink-0">
+                    <div class="aspect-square rounded-xl overflow-hidden border-2 border-[var(--accent)] shadow-2xl">
+                        <img src="assets/testimonials/rachita.jpg" alt="Rachita" class="w-full h-full object-cover" />
+                    </div>
+                </div>
+                            <div class="w-full md:w-2/3 lg:w-3/4">
+                    <div class="mb-6">
+                        <h4 class="text-2xl font-bold text-white mb-1">Rachita</h4>
+                        <p class="text-[var(--accent)] font-semibold uppercase tracking-wider text-sm">8 years of togetherness with Tonabolic @ training!</p>
+                    </div>
+                    <div class="relative">
+                        <span class="absolute -top-8 -left-6 text-6xl text-white/10 font-serif">”</span>
+                        <p class="text-gray-300 leading-relaxed text-lg whitespace-pre-line">
+                            I’ve been working out with Tonabolics for the past 8 years, starting well before Covid. When the pandemic hit and everything felt uncertain, Tonabolics was one constant I could rely on. Continuing the workouts online during Covid gave me something positive and grounding to look forward to every day and it truly made a difference during that time.
+                            What I really appreciate is the variety of trainers, each bringing their own expertise and style. The workouts never feel monotonous or boring, and there’s always something new to learn and challenge yourself with.
+                            Post-Covid, returning to physical training has been just as rewarding. My journey with Tonabolics has helped me stay not only physically fit but also mentally strong. It’s been a big part of my routine and well-being, and I’m grateful for the consistency, motivation, and support over the years.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-white/5" />
+
+            <div class="flex flex-col md:flex-row-reverse gap-12 items-start" data-aos="fade-up">
+                <div class="w-full md:w-1/3 lg:w-1/4 shrink-0">
+                    <div class="aspect-square rounded-xl overflow-hidden border-2 border-[var(--accent)] shadow-2xl">
+                        <img src="assets/testimonials/nisha.jpeg" alt="Nisha Imayapathy" class="w-full h-full object-cover" />
+                    </div>
+                </div>
+                <div class="w-full md:w-2/3 lg:w-3/4">
+                    <div class="mb-6">
+                        <h4 class="text-2xl font-bold text-white mb-1">Nisha Imayapathy</h4>
+                        <p class="text-[var(--accent)] font-semibold uppercase tracking-wider text-sm">(A proud mom of 2 teenagers)</p>
+                    </div>
+                    <div class="relative">
+                        <span class="absolute -top-8 -left-6 text-6xl text-white/10 font-serif">“</span>
+                        <p class="text-gray-300 leading-relaxed text-lg whitespace-pre-line">
+                            I’ve been with Tonabolic for about six years now, and I can proudly say that I’ve grown stronger 💪 training with this incredible team. The coaches at Tonabolic have been absolutely amazing and always accommodating of our individual requirements. Watching Ashrita build and grow such a strong team despite so many hindrances is truly astounding. Wishing Team Tonabolic continued success under Ashrita’s inspiring guidance. 
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+ <hr class="border-white/5" />
+ 
+ 
+   <div class="flex flex-col md:flex-row gap-12 items-start" data-aos="fade-up">
+                <div class="w-full md:w-1/3 lg:w-1/4 shrink-0">
+                    <div class="aspect-square rounded-xl overflow-hidden border-2 border-[var(--accent)] shadow-2xl">
+                        <img src="assets/testimonials/Roopesh.jpg" alt="Rachita" class="w-full h-full object-cover" />
+                    </div>
+                </div>
+                          <div class="w-full md:w-2/3 lg:w-3/4">
+                    <div class="mb-6">
+                        <h4 class="text-2xl font-bold text-white mb-1">Roopesh</h4>
+                        <p class="text-[var(--accent)] font-semibold uppercase tracking-wider text-sm">Director of Engineering, 
+Microsoft Hyderabad>
+                    </div>
+                    <div class="relative">
+                        <span class="absolute -top-8 -right-6 text-6xl text-white/10 font-serif">”</span>
+                        <p class="text-gray-300 leading-relaxed text-lg whitespace-pre-line">
+                           Tonabolic has truly transformed my fitness journey over the past four years. The programme is thoughtfully structured to suit all fitness levels and tailored to individual needs. I commend Ashrita’s exceptional leadership in driving this initiative, supported by a team of highly certified trainers who have made a real difference. Thanks to Tonabolic, I’ve improved my strength, endurance, and stability, while also recovering from previous running and sports injuries. It’s been a game-changer for my overall well-being.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            
+ 
+        </div>
+    </div>
+</section>
+
+
+
+<section id="image-gallery" class="py-20 px-6 bg-[var(--dark-4)] text-white">
+    <div class="max-w-6xl mx-auto text-center">
+
+        <h2 class="text-4xl font-bold mb-4">
+            Our Community in Action
+        </h2>
+        <p class="text-[var(--text-muted)] max-w-3xl mx-auto mb-16 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+            A curated collection of moments showcasing our community and commitment to fitness excellence.
+        </p>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 auto-rows-fr">
+            
+
+            <div class="overflow-hidden rounded-lg aspect-video col-span-2 sm:col-span-2 " data-aos="zoom-in" data-aos-delay="200">
+                <img 
+                    src="assets/gallery/3.png" 
+                    alt="Gallery Image of Coach 2" 
+                    class="w-full h-full object-cover object-top transition duration-300 hover:scale-105" 
+                    onerror="this.onerror=null; this.src='https://placehold.co/600x300/1e2124/ffffff?text=WIDE+IMAGE+2';" 
+                >
+            </div>
+            
+             <div class="overflow-hidden rounded-lg aspect-video col-span-2 sm:col-span-2 " data-aos="zoom-in" data-aos-delay="200">
+                <img 
+                    src="assets/gallery/4.png" 
+                    alt="Gallery Image of Coach 2" 
+                    class="w-full h-full object-cover object-top transition duration-300 hover:scale-105" 
+                    onerror="this.onerror=null; this.src='https://placehold.co/600x300/1e2124/ffffff?text=WIDE+IMAGE+2';" 
+                >
+            </div>
+            
+               <!--<div class="overflow-hidden rounded-lg w-100% h-auto aspect-square col-span-2 row-span-2" data-aos="zoom-in" data-aos-delay="100">-->
+                <div class="overflow-hidden rounded-lg w-100% aspect-video col-span-2 sm:col-span-2" data-aos="zoom-in" data-aos-delay="200">
+                    <img 
+                        src="assets/gallery/DSC03371.JPG" 
+                        alt="Gallery Image of Coach 1" 
+                        class="w-full h-full object-cover transition duration-300 hover:scale-105" 
+                        onerror="this.onerror=null; this.src='https://placehold.co/600x600/1e2124/ffffff?text=FEATURE+IMAGE+1';" 
+                    >
+                </div>
+                
+            <div class="overflow-hidden rounded-lg aspect-video col-span-2 sm:col-span-2" data-aos="zoom-in" data-aos-delay="200">
+                <img 
+                    src="assets/gallery/Freedom_ride.jpg" 
+                    alt="Gallery Image of Coach 2" 
+                    class="w-full h-full object-cover transition duration-300 hover:scale-105" 
+                    onerror="this.onerror=null; this.src='https://placehold.co/600x300/1e2124/ffffff?text=WIDE+IMAGE+2';" 
+                >
+            </div>
+            
+              <div class="overflow-hidden rounded-lg aspect-square" data-aos="zoom-in" data-aos-delay="300">
+                <img 
+                    src="assets/gallery/fe206ff9-9242-49eb-a233-8e0db6192bf2-387c2085-c056-4528-9016-5f620112e4d0~2.jpg" 
+                    alt="Gallery Image of Coach 3" 
+                    class="w-full h-full object-cover transition duration-300 hover:scale-105" 
+                    onerror="this.onerror=null; this.src='https://placehold.co/300x300/1e2124/ffffff?text=STANDARD+3';" 
+                >
+            </div>
+
+            <div class="overflow-hidden rounded-lg aspect-square" data-aos="zoom-in" data-aos-delay="300">
+                <img 
+                    src="assets/gallery/28577203_1095442600597347_5598609402935963043_n.jpg" 
+                    alt="Gallery Image of Coach 3" 
+                    class="w-full h-full object-cover transition duration-300 hover:scale-105" 
+                    onerror="this.onerror=null; this.src='https://placehold.co/300x300/1e2124/ffffff?text=STANDARD+3';" 
+                >
+            </div>
+            
+            
+               <div class="overflow-hidden rounded-lg aspect-square" data-aos="zoom-in" data-aos-delay="300">
+                <img 
+                    src="assets/gallery/IMG-20180315-WA0080.jpg"
+                    alt="Gallery Image of Coach 3" 
+                    class="w-full h-full object-cover transition duration-300 hover:scale-105" 
+                    onerror="this.onerror=null; this.src='https://placehold.co/300x300/1e2124/ffffff?text=STANDARD+3';" 
+                >
+            </div>
+            
+            
+                 <div class="overflow-hidden rounded-lg aspect-square" data-aos="zoom-in" data-aos-delay="300">
+                <img 
+                    src="assets/gallery/18.png"
+                    alt="Gallery Image of Coach 3" 
+                    class="w-full h-full object-cover transition duration-300 hover:scale-105" 
+                    onerror="this.onerror=null; this.src='https://placehold.co/300x300/1e2124/ffffff?text=STANDARD+3';" 
+                >
+            </div>
+            
+            <div class="overflow-hidden rounded-lg aspect-square" data-aos="zoom-in" data-aos-delay="300">
+                <img 
+                    src="assets/gallery/21.png"
+                    alt="Gallery Image of Coach 3" 
+                    class="w-full h-full object-cover transition duration-300 hover:scale-105" 
+                    onerror="this.onerror=null; this.src='https://placehold.co/300x300/1e2124/ffffff?text=STANDARD+3';" 
+                >
+            </div>
+            
+            
+
+            <div class="overflow-hidden rounded-lg aspect-square" data-aos="zoom-in" data-aos-delay="400">
+                <img 
+                    src="assets/gallery/26904753_1068941989914075_6441790509960088731_n.jpg" 
+                    alt="Gallery Image of Coach 4" 
+                    class="w-full h-full object-cover transition duration-300 hover:scale-105" 
+                    onerror="this.onerror=null; this.src='https://placehold.co/300x300/1e2124/ffffff?text=STANDARD+4';" 
+                >
+            </div>
+            
+            <div class="overflow-hidden rounded-lg aspect-square" data-aos="zoom-in" data-aos-delay="500">
+                <img 
+                    src="assets/gallery/Ashrita_Dutta.jpg" 
+                    alt="Gallery Image of client training in gym" 
+                    class="w-full h-full object-cover transition duration-300 hover:scale-105" 
+                    onerror="this.onerror=null; this.src='https://placehold.co/300x300/1e2124/ffffff?text=Client+Training+5';" 
+                >
+            </div>
+
+            
+
+            <div class="overflow-hidden rounded-lg aspect-square sm:row-span-2" data-aos="zoom-in" data-aos-delay="700">
+                <img 
+                    src="assets/gallery/36.JPG" 
+                    alt="Placeholder Image 7" 
+                    class="w-full h-full object-cover transition duration-300 hover:scale-105" 
+                >
+            </div>
+
+            <div class="overflow-hidden rounded-lg aspect-square" data-aos="zoom-in" data-aos-delay="800">
+                <img 
+                    src="assets/gallery/20240907_133612.jpg" 
+                    alt="Placeholder Image 8" 
+                    class="w-full h-full object-cover transition duration-300 hover:scale-105" 
+                >
+            </div>
+            
+            <div class="overflow-hidden rounded-lg aspect-square" data-aos="zoom-in" data-aos-delay="900">
+                <img 
+                    src="assets//gallery/IMG-20180304-WA0034.jpg" 
+                    alt="Placeholder Image 9" 
+                    class="w-full h-full object-cover transition duration-300 hover:scale-105" 
+                >
+            </div>
+            
+            
+             <!--<div class="overflow-hidden rounded-lg w-100% aspect-video col-span-2 sm:col-span-2" data-aos="zoom-in" data-aos-delay="200">-->
+                 <div class="overflow-hidden rounded-lg aspect-square" data-aos="zoom-in" data-aos-delay="900">
+                <img 
+                    src="assets/gallery/DSC03561.JPG" 
+                    alt="Gallery Image of trainer working with client at home" 
+                   class="w-full h-full object-cover transition duration-300 hover:scale-105" 
+                    onerror="this.onerror=null; this.src='https://placehold.co/600x300/1e2124/ffffff?text=WIDE+IMAGE+6';" 
+                >
+            </div>
+
+        </div>
+        
+    </div>
+</section>
+
+  <footer class="py-12 px-6 border-t border-white/10 text-[var(--text-muted)] bg-[var(--dark-1)]">
+      <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+          
+          <div>
+              <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+              <ul class="space-y-2 text-sm">
+                  <li><a href="/index.html" class="hover:text-[var(--accent)] transition">Home</a></li>
+                  <li><a href="/aboutus.html" class="hover:text-[var(--accent)] transition">About</a></li>
+                  <li><a href="/services.html" class="hover:text-[var(--accent)] transition">Services</a></li>
+                  <li><a href="/franchise.html" class="hover:text-[var(--accent)] transition">Franchise</a></li>
+                  <li><a href="/contact.html" class="hover:text-[var(--accent)] transition">Contact</a></li>
+                  <li><a href="/blog" class="hover:text-[var(--accent)] transition">Blog</a></li>
+              </ul>
+          </div>
+
+          <div>
+              <h4 class="text-lg font-semibold text-white mb-4">Train With Us</h4>
+              <a href="/contact.html" class="inline-block mt-1 px-4 py-2 text-sm rounded-lg border border-[var(--accent)] text-[var(--accent)] hover:bg-[var(--accent)] hover:text-black transition">
+                  Connect to Train
+              </a>
+          </div>
+
+          <div>
+              <h4 class="text-lg font-semibold text-white mb-4">Partnership</h4>
+              <a href="#" class="inline-block mt-1 px-4 py-2 text-sm rounded-lg border border-white/20 hover:border-[var(--accent)] transition">
+                  Explore Franchise
+              </a>
+          </div>
+          
+          <div class="md:col-span-1">
+              <h4 class="text-lg font-semibold text-white mb-4">Legal</h4>
+              <ul class="space-y-2 text-sm">
+                  <li><a href="/privacy-policy.html" class="hover:text-[var(--accent)] transition">Privacy Policy</a></li>
+                  <li><a href="/terms-condition.html" class="hover:text-[var(--accent)] transition">Terms of Use</a></li>
+              </ul>
+          </div>
+      </div>
+      
+      <div class="mt-12 pt-6 border-t border-white/5 text-center text-sm">
+          © 2026 Tonabolic. All rights reserved.
+      </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ duration: 900, once: true });</script>
+
+  <script>
+    const nav = document.getElementById("navBar");
+    const mobileNav = document.getElementById("mobileNav");
+    const menuBtn = document.getElementById("menuBtn");
+    const closeNav = document.getElementById("closeNav");
+
+    function setInitialNavbar() {
+      nav.classList.add("w-[90%]", "md:w-[80%]", "rounded-2xl", "top-4", "bg-[rgba(20,20,20,0.6)]");
+      nav.classList.remove("w-full", "rounded-none", "top-0", "bg-[rgba(10,10,10,0.95)]");
+    }
+
+    // MOBILE NAV OPEN
+    menuBtn.addEventListener("click", () => {
+      mobileNav.classList.remove("translate-y-full");
+    });
+
+    // MOBILE NAV CLOSE (also close when a link is clicked)
+    function closeMobileNav() {
+      mobileNav.classList.add("translate-y-full");
+    }
+
+    closeNav.addEventListener("click", closeMobileNav);
+    
+    // Close nav when any link is clicked within the mobile nav
+    mobileNav.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", closeMobileNav);
+    });
+    
+    // Run when page loads
+    document.addEventListener("DOMContentLoaded", () => {
+      setInitialNavbar();
+    });
+
+    // Scroll behavior
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 30) {
+        nav.classList.remove("w-[90%]", "md:w-[80%]", "rounded-2xl", "top-4", "bg-[rgba(20,20,20,0.6)]");
+        nav.classList.add("w-full", "rounded-none", "top-0", "bg-[rgba(10,10,10,0.95)]");
+      } else {
+        setInitialNavbar();
+      }
+    });
+  </script>
+<script>
+    // Get references to the elements
+    const imageModal = document.getElementById('imageOnlyModal');
+    const closeImageBtn = document.getElementById('closeImageModalBtn');
+    
+    // Define the delay time in milliseconds (8 seconds = 8000 ms)
+    const delayTime = 3000; 
+
+    // Function to open the modal
+    function openImageModal() {
+        imageModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // Prevents background scrolling
+    }
+
+    // Function to close the modal
+    function closeImageModal() {
+        imageModal.classList.add('hidden');
+        document.body.style.overflow = 'auto'; // Restores background scrolling
+    }
+
+    // --- NEW LOGIC: POP UP AFTER DELAY ---
+    // The setTimeout function calls 'openImageModal' after 8000 milliseconds.
+    setTimeout(openImageModal, delayTime);
+    
+    // IMPORTANT: To ensure the modal starts hidden until the 8s delay is over, 
+    // make sure your HTML still includes the 'hidden' class on the #imageOnlyModal div.
+    // --- END NEW LOGIC ---
+
+    // Event listeners for closing
+    
+    // 1. Close when the 'X' button is clicked
+    closeImageBtn.addEventListener('click', closeImageModal);
+    
+    // 2. Optional: Close the modal if the user clicks the dark backdrop
+    imageModal.addEventListener('click', (event) => {
+        // Ensure the click targets the backdrop, not the image content box
+        if (event.target === imageModal) {
+            closeImageModal();
+        }
+    });
+
+    // 3. Optional: Close the modal if the user presses the ESC key
+    document.addEventListener('keydown', (event) => {
+        // Check if the modal is currently visible (i.e., does NOT have the 'hidden' class)
+        if (event.key === 'Escape' && !imageModal.classList.contains('hidden')) {
+            closeImageModal();
+        }
+    });
+</script>
+  </body>
+  </html>
